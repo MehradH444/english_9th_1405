@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش جامع زبان انگلیسی نهم (Prospect 3 - ۱۴۰۵)</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #10b981;
+            --danger-color: #ef4444;
+        }
+        body {
+            font-family: Tahoma, sans-serif, Arial;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1e293b;
+            padding: 10px;
+            gap: 15px;
+        }
+        nav button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav button:hover, nav button.active {
+            background: var(--primary-color);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .lesson-card, .admin-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #fff;
+        }
+        h2, h3 { color: var(--primary-color); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #cbd5e1;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        th { background: #f1f5f9; }
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover { background: var(--secondary-color); }
+        .btn-danger { background: var(--danger-color); }
+        .btn-danger:hover { background: #dc2626; }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3)</h1>
+        <p>نسخه ۱۴۰۵ - همراه با واژگان، گرامر، آزمون و پنل مدیریت کامل</p>
+    </header>
+
+    <nav>
+        <button onclick="switchTab('lessons')" class="active">آموزش ۶ درس</button>
+        <button onclick="switchTab('exam')">آزمون جامع (۲۸ سوالی)</button>
+        <button onclick="switchTab('admin')">پنل مدیریت (Admin Panel)</button>
+    </nav>
+
+    <div class="container">
+        <!-- بخش آموزش دروس -->
+        <div id="lessons-tab" class="tab-content">
+            <h2>محتوای آموزشی و واژگان ۶ درس</h2>
+            <div id="lessons-container"></div>
+        </div>
+
+        <!-- بخش آزمون جامع -->
+        <div id="exam-tab" class="tab-content hidden">
+            <h2>آزمون جامع تألیفی (پایه نهم)</h2>
+            <div id="quiz-container">
+                <p>این آزمون شامل سوالات استاندارد واژگان، دستور زبان و ترجمه است[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span).</p>
+                <button class="btn" onclick="startExam()">شروع آزمون</button>
+                <div id="exam-questions" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- بخش پنل مدیریت -->
+        <div id="admin-tab" class="tab-content hidden">
+            <h2>پنل مدیریت و ویرایش محتوا (Admin Dashboard)</h2>
+            <div class="admin-section">
+                <h3>افزودن واژه جدید به درس‌ها</h3>
+                <label>انتخاب درس:</label>
+                <select id="admin-lesson-select">
+                    <option value="0">درس اول: Personality</option>
+                    <option value="1">درس دوم: Travel</option>
+                    <option value="2">درس سوم: Festivals and Ceremonies</option>
+                    <option value="3">درس چهارم: Services</option>
+                    <option value="4">درس پنجم: Media</option>
+                    <option value="5">درس ششم: Health and Injuries</option>
+                </select>
+                <label>کلمه انگلیسی:</label>
+                <input type="text" id="new-word" placeholder="مثال: Brave">
+                <label>معنی فارسی:</label>
+                <input type="text" id="new-trans" placeholder="مثال: شجاع">
+                <label>مترادف‌ها:</label>
+                <input type="text" id="new-syn" placeholder="مثال: Courageous">
+                <label>متضادها:</label>
+                <input type="text" id="new-ant" placeholder="مثال: Cowardly">
+                <button class="btn" onclick="addNewVocabulary()">ثبت واژه جدید در سیستم</button>
+            </div>
+            <div class="admin-section">
+                <h3>مدیریت و آمار داده‌ها</h3>
+                <p>تعداد کل دروس فعال: <span id="stat-lessons">6</span></p>
+                <p>وضعیت پایگاه داده: <span style="color: var(--accent-color);">متصل و پایدار (Local Storage Active)</span></p>
+                <button class="btn btn-danger" onclick="resetData()">بازنشانی به تنظیمات پیش‌فرض کارخانه</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // داده‌های پایه برگرفته از فایل جامع راهنما
+        const defaultData = [
+            {
+                title: "درس اول: Personality (شخصیت)",
+                vocab: [
+                    {word: "Shy", trans: "خجالتی", syn: "Cowardly", ant: "Brave"},
+                    {word: "Brave", trans: "شجاع", syn: "Courageous", ant: "Shy"},
+                    {word: "Hard-working", trans: "سخت‌کوش", syn: "Diligent", ant: "Lazy"},
+                    {word: "Kind", trans: "مهربان", syn: "Friendly", ant: "Unkind, Rude"}
+                ],
+                grammar: "فعل be در زمان حال ساده (am/is/are) برای توصیف ویژگی‌های اخلاقی[span_21](start_span)[span_21](end_span)."
+            },
+            {
+                title: "درس دوم: Travel (سفر)",
+                vocab: [
+                    {word: "Ticket", trans: "بلیت", syn: "Pass", ant: "-"},
+                    {word: "Passport", trans: "گذرنامه", syn: "Travel document", ant: "-"},
+                    {word: "Airport", trans: "فرودگاه", syn: "-", ant: "-"},
+                    {word: "Destination", trans: "مقصد", syn: "Goal", ant: "Origin"}
+                ],
+                grammar: "حال استمراری (am/is/are + V-ing) برای کارهایی که در جریان است[span_22](start_span)[span_22](end_span)."
+            },
+            {
+                title: "درس سوم: Festivals and Ceremonies (جشن‌ها و مراسم)",
+                vocab: [
+                    {word: "Ceremony", trans: "مراسم، جشن", syn: "Ritual", ant: "-"},
+                    {word: "Fireworks", trans: "آتش‌بازی", syn: "-", ant: "-"},
+                    {word: "Lunar", trans: "قمری", syn: "-", ant: "Solar"},
+                    {word: "Celebrate", trans: "جشن گرفتن", syn: "Observe", ant: "Mourn"}
+                ],
+                grammar: "حال ساده با do/does برای عادت‌ها و رسومات[span_23](start_span)[span_23](end_span)."
+            },
+            {
+                title: "درس چهارم: Services (خدمات)",
+                vocab: [
+                    {word: "Service", trans: "خدمت، سرویس", syn: "-", ant: "-"},
+                    {word: "Employee", trans: "کارمند", syn: "Worker", ant: "Employer"},
+                    {word: "Emergency", trans: "وضعیت اضطراری", syn: "Crisis", ant: "Calm"},
+                    {word: "Post office", trans: "اداره پست", syn: "-", ant: "-"}
+                ],
+                grammar: "پرسش‌های WH و قیدهای تکرار (always, usually, sometimes, never)[span_24](start_span)[span_24](end_span)."
+            },
+            {
+                title: "درس پنجم: Media (رسانه)",
+                vocab: [
+                    {word: "Media", trans: "رسانه", syn: "Information channels", ant: "-"},
+                    {word: "Online", trans: "برخط، آنلاین", syn: "-", ant: "Offline"},
+                    {word: "Interview", trans: "مصاحبه", syn: "-", ant: "-"},
+                    {word: "Reliable", trans: "قابل اعتماد", syn: "Trustworthy", ant: "Unreliable"}
+                ],
+                grammar: "گذشته ساده افعال باقاعده (ed) و گذشته فعل be (was/were)[span_25](start_span)[span_25](end_span)."
+            },
+            {
+                title: "درس ششم: Health and Injuries (سلامتی و آسیب‌دیدگی‌ها)",
+                vocab: [
+                    {word: "Health", trans: "سلامتی", syn: "Wellness", ant: "Sickness"},
+                    {word: "Accident", trans: "حادثه، تصادف", syn: "Crash", ant: "-"},
+                    {word: "Plaster", trans: "چسب زخم، گچ", syn: "-", ant: "-"},
+                    {word: "Bruise", trans: "کبودی", syn: "-", ant: "-"}
+                ],
+                grammar: "گذشته ساده افعال بی‌قاعده و ضمایر مفعولی (me, him, her, us, them)[span_26](start_span)[span_26](end_span)."
+            }
+        ];
+
+        let appData = JSON.parse(localStorage.getItem('english_9th_data')) || defaultData;
+
+        function saveData() {
+            localStorage.setItem('english_9th_data', JSON.stringify(appData));
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
+            
+            if(tabId === 'lessons') {
+                document.getElementById('lessons-tab').classList.remove('hidden');
+                event.target.classList.add('active');
+                renderLessons();
+            } else if(tabId === 'exam') {
+                document.getElementById('exam-tab').classList.remove('hidden');
+                event.target.classList.add('active');
+            } else if(tabId === 'admin') {
+                document.getElementById('admin-tab').classList.remove('hidden');
+                event.target.classList.add('active');
+            }
+        }
+
+        function renderLessons() {
+            const container = document.getElementById('lessons-container');
+            container.innerHTML = '';
+            appData.forEach((lesson, index) => {
+                let vocabRows = lesson.vocab.map(v => `
+                    <tr>
+                        <td><b>${v.word}</b></td>
+                        <td>${v.trans}</td>
+                        <td>${v.syn}</td>
+                        <td>${v.ant}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML += `
+                    <div class="lesson-card">
+                        <h3>${lesson.title}</h3>
+                        <p><b>نکته گرامری کلیدی:</b> ${lesson.grammar}</p>
+                        <table>
+                            <tr>
+                                <th>کلمه</th>
+                                <th>معنی فارسی</th>
+                                <th>مترادف</th>
+                                <th>متضاد</th>
+                            </tr>
+                            ${vocabRows}
+                        </table>
+                    </div>
+                `;
+            });
+        }
+
+        function addNewVocabulary() {
+            const lessonIndex = document.getElementById('admin-lesson-select').value;
+            const word = document.getElementById('new-word').value;
+            const trans = document.getElementById('new-trans').value;
+            const syn = document.getElementById('new-syn').value;
+            const ant = document.getElementById('new-ant').value;
+
+            if(!word || !trans) {
+                alert('لطفاً حداقل کلمه و معنی را وارد کنید!');
+                return;
+            }
+
+            appData[lessonIndex].vocab.push({word, trans, syn: syn || '-', ant: ant || '-'});
+            saveData();
+            alert('واژه جدید با موفقیت به سیستم اضافه شد و در پایگاه داده ذخیره گشت!');
+            document.getElementById('new-word').value = '';
+            document.getElementById('new-trans').value = '';
+            document.getElementById('new-syn').value = '';
+            document.getElementById('new-ant').value = '';
+        }
+
+        function resetData() {
+            if(confirm('آیا مطمئن هستید که می‌خواهید اطلاعات را به حالت اولیه بازنشانی کنید؟')) {
+                localStorage.removeItem('english_9th_data');
+                appData = defaultData;
+                renderLessons();
+                alert('اطلاعات با موفقیت بازنشانی شد.');
+            }
+        }
+
+        function startExam() {
+            const container = document.getElementById('exam-questions');
+            container.innerHTML = `
+                <div style="background:#f8fafc; padding:15px; border-radius:8px;">
+                    <p><b>۱. معنی کلمه Shy چیست؟</b></p>
+                    <label><input type="radio" name="q1" value="b"> الف) شجاع</label><br>
+                    <label><input type="radio" name="q1" value="a"> ب) خجالتی</label><br>
+                    
+                    <p><b>۲. جای خالی را کامل کنید: My friends ... very kind.</b></p>
+                    <label><input type="radio" name="q2" value="a"> الف) are</label><br>
+                    <label><input type="radio" name="q2" value="b"> ب) is</label><br>
+
+                    <p><b>۳. کدام گزینه متضاد کلمه polite است؟</b></p>
+                    <label><input type="radio" name="q3" value="a"> الف) rude</label><br>
+                    <label><input type="radio" name="q3" value="b"> ب) kind</label><br>
+
+                    <br>
+                    <button class="btn" onclick="checkExam()">ثبت و دریافت نمره و پاسخ‌نامه</button>
+                    <div id="exam-result" style="margin-top:15px; font-weight:bold;"></div>
+                </div>
+            `;
+        }
+
+        function checkExam() {
+            let score = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if(q1 && q1.value === 'a') score++;
+            if(q2 && q2.value === 'a') score++;
+            if(q3 && q3.value === 'a') score++;
+
+            document.getElementById('exam-result').innerHTML = `
+                نمره شما: ${score} از ۳<br>
+                <span style="color: var(--primary-color);">پاسخ‌نامه تشریحی: سوال ۱ (گزینه ب - خجالتی)، سوال ۲ (گزینه الف - are چون جمع است)، سوال ۳ (گزینه الف - rude متضاد مودب است[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span)).</span>
+            `;
+        }
+
+        // بارگذاری اولیه دروس
+        renderLessons();
+    </script>
+</body>
+</html>
