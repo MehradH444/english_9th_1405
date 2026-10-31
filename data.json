@@ -1,0 +1,401 @@
+{
+  "grade": "9th",
+  "subject": "English (Prospect 3)",
+  "edition": "1405",
+  "total_lessons": 6,
+  "lessons": [
+    {
+      "lesson_number": 1,
+      "title": "Personality",
+      "vocabulary": [
+        {
+          "word": "Clever",
+          "translation": "باهوش، بااستعداد",
+          "synonyms": ["Smart", "Intelligent"],
+          "antonyms": ["Stupid", "Foolish"],
+          "part_of_speech": "Adjective",
+          "example": "He is a very clever student."
+        },
+        {
+          "word": "Kind",
+          "translation": "مهربان",
+          "synonyms": ["Caring", "Friendly"],
+          "antonyms": ["Cruel", "Unkind"],
+          "part_of_speech": "Adjective",
+          "example": "She is always kind to everyone."
+        },
+        {
+          "word": "Hard-working",
+          "translation": "سخت‌کوش، پرکار",
+          "synonyms": ["Diligent", "Industrious"],
+          "antonyms": ["Lazy"],
+          "part_of_speech": "Adjective",
+          "example": "My father is a hard-working man."
+        },
+        {
+          "word": "Lazy",
+          "translation": "تنبل",
+          "synonyms": ["Idle"],
+          "antonyms": ["Hard-working", "Active"],
+          "part_of_speech": "Adjective",
+          "example": "Don't be lazy! Do your homework."
+        },
+        {
+          "word": "Polite",
+          "translation": "باادب، مؤدب",
+          "synonyms": ["Courteous", "Mannerly"],
+          "antonyms": ["Impolite", "Rude"],
+          "part_of_speech": "Adjective",
+          "example": "He is a polite boy."
+        },
+        {
+          "word": "Rude",
+          "translation": "بی‌ادب، گستاخ",
+          "synonyms": ["Impolite"],
+          "antonyms": ["Polite"],
+          "part_of_speech": "Adjective",
+          "example": "It is rude to interrupt others."
+        },
+        {
+          "word": "Quiet",
+          "translation": "ساکت، آرام",
+          "synonyms": ["Silent", "Calm"],
+          "antonyms": ["Noisy", "Talkative"],
+          "part_of_speech": "Adjective",
+          "example": "Please be quiet in the library."
+        },
+        {
+          "word": "Careful",
+          "translation": "مواظب، بااحتیاط",
+          "synonyms": ["Cautious"],
+          "antonyms": ["Careless"],
+          "part_of_speech": "Adjective",
+          "example": "Be careful when driving."
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Conversation",
+          "lines": [
+            {
+              "english": "Is your uncle quiet?",
+              "persian": "آیا عموی شما ساکت است؟",
+              "exam_tip": "پرسش با فعل to be (Is) برای صفت‌ها."
+            },
+            {
+              "english": "No, he is very talkative.",
+              "persian": "خیر، او بسیار پرحرف است.",
+              "exam_tip": "استفاده از قید قوی‌کننده very قبل از صفت."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "To Be Verbs with Personality Adjectives",
+          "explanation": "برای توصیف شخصیت افراد از افعال to be (am, is, are) به همراه صفت استفاده می‌شود.",
+          "formula": "Subject + am/is/are + Adjective",
+          "examples": [
+            {
+              "english": "He is very patient.",
+              "persian": "او بسیار صبور است."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_number": 2,
+      "title": "Travel",
+      "vocabulary": [
+        {
+          "word": "Travel",
+          "translation": "سفر کردن، مسافرت",
+          "synonyms": ["Journey", "Trip"],
+          "antonyms": ["Stay"],
+          "part_of_speech": "Verb / Noun",
+          "example": "We love to travel in summer."
+        },
+        {
+          "word": "Ticket",
+          "translation": "بلیط",
+          "synonyms": ["Pass"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "I bought a plane ticket."
+        },
+        {
+          "word": "Hotel",
+          "translation": "هتل، مسافرخانه",
+          "synonyms": ["Inn"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "They stayed at a beautiful hotel."
+        },
+        {
+          "word": "Passport",
+          "translation": "گذرنامه، پاسپورت",
+          "synonyms": ["Travel document"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "Don't forget your passport!"
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Conversation",
+          "lines": [
+            {
+              "english": "Are you buying a ticket?",
+              "persian": "آیا داری بلیط می‌خری؟",
+              "exam_tip": "زمان حال استمراری (Present Continuous) برای کار در حال انجام."
+            },
+            {
+              "english": "Yes, I am booking a room online too.",
+              "persian": "بله، من همچنین دارم یک اتاق آنلاین رزرو می‌کنم.",
+              "exam_tip": "کاربرد فعل book به معنای رزرو کردن."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "Present Continuous Tense",
+          "explanation": "زمان حال استمراری برای بیان کارهایی که همین الان در حال رخ دادن هستند.",
+          "formula": "Subject + am/is/are + Verb-ing",
+          "examples": [
+            {
+              "english": "She is packing her bags.",
+              "persian": "او دارد چمدان‌هایش را می‌بندد."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_number": 3,
+      "title": "Festivals and Ceremonies",
+      "vocabulary": [
+        {
+          "word": "Celebrate",
+          "translation": "جشن گرفتن",
+          "synonyms": ["Observe", "Commemorate"],
+          "antonyms": ["Mourn"],
+          "part_of_speech": "Verb",
+          "example": "We celebrate Norooz every year."
+        },
+        {
+          "word": "Fireworks",
+          "translation": "آتش‌بازی",
+          "synonyms": ["Pyrotechnics"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "The fireworks were amazing."
+        },
+        {
+          "word": "National",
+          "translation": "ملی",
+          "synonyms": ["State", "Countrywide"],
+          "antonyms": ["International", "Local"],
+          "part_of_speech": "Adjective",
+          "example": "It is a national holiday."
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Reading",
+          "lines": [
+            {
+              "english": "People wear special clothes on New Year.",
+              "persian": "مردم در عید نوروز لباس‌های خاص می‌پوشند.",
+              "exam_tip": "حرف اضافه on برای روزها و مناسبت‌ها."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "Simple Present Tense (Habits & Routines)",
+          "explanation": "استفاده از زمان حال ساده برای بیان رسومات و عادت‌های همیشگی.",
+          "formula": "Subject + Base Verb (s/es for 3rd person)",
+          "examples": [
+            {
+              "english": "He bakes special cakes for Eid.",
+              "persian": "او برای عید کیک‌های مخصوص می‌پزد."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_number": 4,
+      "title": "Services",
+      "vocabulary": [
+        {
+          "word": "Emergency",
+          "translation": "اورژانس، اضطراری",
+          "synonyms": ["Crisis"],
+          "antonyms": ["Calm"],
+          "part_of_speech": "Noun",
+          "example": "Call 115 in an emergency."
+        },
+        {
+          "word": "Firefighter",
+          "translation": "آتش‌نشان",
+          "synonyms": ["Fireman"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "Firefighters save lives."
+        },
+        {
+          "word": "Donate",
+          "translation": "اهدا کردن",
+          "synonyms": ["Give", "Contribute"],
+          "antonyms": ["Keep", "Receive"],
+          "part_of_speech": "Verb",
+          "example": "They donate blood every year."
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Conversation",
+          "lines": [
+            {
+              "english": "What do you do in emergencies?",
+              "persian": "در موقعیت‌های اضطراری چه کار می‌کنید؟",
+              "exam_tip": "ساختار پرسشی زمان حال ساده با What do."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "Telling Time and Daily Services",
+          "explanation": "نحوه پرسیدن و بیان زمان و خدمات روزمره.",
+          "formula": "What time does... / What time is it?",
+          "examples": [
+            {
+              "english": "The bank opens at 8:00 AM.",
+              "persian": "بانک ساعت ۸ صبح باز می‌شود."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_number": 5,
+      "title": "Media",
+      "vocabulary": [
+        {
+          "word": "News",
+          "translation": "اخبار",
+          "synonyms": ["Reports", "Information"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "I watch the news on TV."
+        },
+        {
+          "word": "Internet",
+          "translation": "اینترنت",
+          "synonyms": ["Web", "Net"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "She surfs the internet daily."
+        },
+        {
+          "word": "Connect",
+          "translation": "متصل شدن، ارتباط داشتن",
+          "synonyms": ["Link", "Join"],
+          "antonyms": ["Disconnect"],
+          "part_of_speech": "Verb",
+          "example": "Connect to the Wi-Fi."
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Reading",
+          "lines": [
+            {
+              "english": "Media plays an important role in our life.",
+              "persian": "رسانه‌ها نقش مهمی در زندگی ما ایفا می‌کنند.",
+              "exam_tip": "اصطلاح play a role به معنی نقش داشتن."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "Past Simple Tense (Regular & Irregular Verbs)",
+          "explanation": "زمان گذشته ساده برای بیان کارهایی که در گذشته تمام شده‌اند.",
+          "formula": "Subject + Past Form of Verb (V2)",
+          "examples": [
+            {
+              "english": "I listened to the radio yesterday.",
+              "persian": "دیروز به رادیو گوش دادم."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lesson_number": 6,
+      "title": "Health and Medical Services",
+      "vocabulary": [
+        {
+          "word": "Patient",
+          "translation": "بیمار (اسم)، صبور (صفت)",
+          "synonyms": ["Sick person"],
+          "antonyms": ["Healthy person"],
+          "part_of_speech": "Noun / Adjective",
+          "example": "The doctor is visiting the patient."
+        },
+        {
+          "word": "Health",
+          "translation": "سلامتی، بهداشت",
+          "synonyms": ["Wellness", "Fitness"],
+          "antonyms": ["Sickness", "Illness"],
+          "part_of_speech": "Noun",
+          "example": "Health is better than wealth."
+        },
+        {
+          "word": "Medicine",
+          "translation": "دارو، پزشکی",
+          "synonyms": ["Drug", "Medication"],
+          "antonyms": [],
+          "part_of_speech": "Noun",
+          "example": "Take this medicine after lunch."
+        }
+      ],
+      "reading_passages": [
+        {
+          "section_title": "Conversation",
+          "lines": [
+            {
+              "english": "What is wrong with you?",
+              "persian": "مشکل شما چیست؟ چه اتفاقی افتاده؟",
+              "exam_tip": "عبارت پرکاربرد امتحانی برای احوالپرسی از بیمار."
+            },
+            {
+              "english": "I have a sore throat.",
+              "persian": "من گلو درد دارم.",
+              "exam_tip": "استفاده از فعل have برای بیان بیماری‌ها."
+            }
+          ]
+        }
+      ],
+      "grammar_and_exam_points": [
+        {
+          "topic": "Modal Verb: Should / Shouldn't",
+          "explanation": "استفاده از should برای توصیه و نصیحت کردن.",
+          "formula": "Subject + should/shouldn't + Base Verb",
+          "examples": [
+            {
+              "english": "You should rest at home.",
+              "persian": "تو باید در خانه استراحت کنی."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
