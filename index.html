@@ -3,377 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3)</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #3b82f6;
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --text-muted: #64748b;
-            --border: #cbd5e1;
-            --accent: #10b981;
-            --danger: #ef4444;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        body.dark-mode {
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-
-        * { box-sizing: border-box; font-family: Tahoma, sans-serif; transition: background 0.3s, color 0.3s; }
-        body { background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.8; }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-        header h1 { margin: 0; font-size: 24px; }
-        header p { margin: 5px 0 0 0; font-size: 14px; opacity: 0.9; }
-
-        .theme-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #0f172a;
-            padding: 10px;
-            gap: 10px;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav button {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        nav button:hover, nav button.active { background: var(--secondary); }
-
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .card {
-            background: var(--surface);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-
-        .guide-box {
-            background: rgba(59, 130, 246, 0.1);
-            border-right: 4px solid var(--secondary);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid var(--border); padding: 10px; text-align: center; font-size: 14px; }
-        th { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
-
-        .btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .btn:hover { background: var(--primary); }
-        .btn-success { background: var(--accent); }
-
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
-        .form-group input, .form-group select {
-            width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 5px;
-            background: var(--surface); color: var(--text);
-        }
-    </style>
+    <title>راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3 - نسخه فوق‌پیشرفته)</title>
+    <!-- اتصال فایل استایل اختصاصی -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <button class="theme-btn" onclick="toggleTheme()">حالت روز/شب</button>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 تغییر حالت تاریک/روشن</button>
         <h1>راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3)</h1>
-        <p>آموزش شش درس، واژگان، دستور زبان، مکالمه و آزمون جامع[span_0](start_span)[span_0](end_span)</p>
+        <p>آموزش کامل شش درس، واژگان، مترادف و متضاد، دستور زبان، مکالمه، افعال بی‌قاعده و آزمون جامع (چاپ ۱۴۰۵)</p>
     </header>
 
     <nav>
         <button onclick="switchTab('guide')" class="active">📖 راهنمای مطالعه و نقشه</button>
         <button onclick="switchTab('lessons')">📚 متن و واژگان ۶ درس</button>
+        <button onclick="switchTab('flashcards')">🎴 فلش‌کارت سه‌بعدی (لایتنر)</button>
+        <button onclick="switchTab('verbs')">📋 افعال بی‌قاعده و نکات</button>
         <button onclick="switchTab('exam')">📝 آزمون جامع (۲۸ سوالی)</button>
-        <button onclick="switchTab('plan')">📅 برنامه مرور ۷ روزه</button>
-        <button onclick="switchTab('admin')">⚙️ پنل مدیریت</button>
+        <button onclick="switchTab('admin')">⚙️ پنل مدیریت پیشرفته</button>
     </nav>
 
     <div class="container">
-        <!-- 1. راهنمای مطالعه و نقشه -->
+        
+        <!-- ۱. بخش راهنمای مطالعه و نقشه دروس -->
         <div id="guide" class="tab-content active">
             <div class="card">
                 <h2>روش استفاده از جزوه</h2>
-                <div class="guide-box">
-                    <p>(۱) ابتدا واژگان هر درس را با صدای بلند بخوانید[span_1](start_span)[span_1](end_span).</p>
-                    <p>(۲) مثال انگلیسی را بپوشانید و معنی آن را به یاد بیاورید[span_2](start_span)[span_2](end_span).</p>
-                    <p>(۳) قاعده را همراه با مثال تمرین کنید[span_3](start_span)[span_3](end_span).</p>
-                    <p>(۴) مکالمه نمونه را با یک هم‌کلاسی اجرا کنید[span_4](start_span)[span_4](end_span).</p>
-                    <p>(۵) تمرین‌ها را بدون نگاه کردن به پاسخ‌نامه حل کنید[span_5](start_span)[span_5](end_span).</p>
+                <div style="background: rgba(99, 102, 241, 0.1); border-right: 4px solid var(--primary); padding: 15px; border-radius: 10px; margin-bottom: 25px;">
+                    <ul id="guideSteps" style="margin: 0; padding-right: 20px; line-height: 2;"></ul>
                 </div>
 
-                <h3>نقشه شش درس</h3>
-                <ul>
-                    <li><b>درس اول:</b> Personality (شخصیت)[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span)</li>
-                    <li><b>درس دوم:</b> Travel (سفر)[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)</li>
-                    <li><b>درس سوم:</b> Festivals and Ceremonies (جشن‌ها و مراسم)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)</li>
-                    <li><b>درس چهارم:</b> Services (خدمات)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)</li>
-                    <li><b>درس پنجم:</b> Media (رسانه)[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span)</li>
-                    <li><b>درس ششم:</b> Health and Injuries (سلامتی و آسیب‌دیدگی‌ها)[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span)</li>
-                </ul>
+                <h2>نقشه شش درس کتاب</h2>
+                <div class="card" style="background: var(--surface);">
+                    <ul>
+                        <li><b>درس اول (Personality):</b> توصیف ویژگی‌های اخلاقی و شخصیت[span_0](start_span)[span_0](end_span)</li>
+                        <li><b>درس دوم (Travel):</b> صحبت درباره سفر و حال استمراری[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span)</li>
+                        <li><b>درس سوم (Festivals and Ceremonies):</b> جشن‌ها، مراسم و حال ساده[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span)</li>
+                        <li><b>درس چهارم (Services):</b> خدمات عمومی، ساعت کار و پرسش‌های WH[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span)</li>
+                        <li><b>درس پنجم (Media):</b> رسانه و گذشته ساده افعال باقاعده[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)</li>
+                        <li><b>درس ششم (Health and Injuries):</b> سلامتی، حوادث و افعال بی‌قاعده[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)</li>
+                    </ul>
+                </div>
+
+                <h2>برنامه مرور پیشنهادی ۷ روزه</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>روزهای هفته</th>
+                            <th>مباحث قابل مرور</th>
+                        </tr>
+                    </thead>
+                    <tbody id="weeklyPlan"></tbody>
+                </table>
             </div>
         </div>
 
-        <!-- 2. واژگان و دروس -->
+        <!-- ۲. بخش متن و واژگان ۶ درس -->
         <div id="lessons" class="tab-content">
-            <div class="card">
-                <h2>واژگان کاربردی و دستور زبان دروس</h2>
-                <input type="text" id="lessonSearch" class="form-group input" placeholder="جستجوی واژه یا درس..." onkeyup="filterLessons()" style="margin-bottom:20px;">
-                <div id="lessonsContainer"></div>
+            <input type="text" id="lessonSearch" class="search-box" placeholder="🔍 جستجوی پیشرفته در کلمات، مترادف‌ها، متضادها و نکات گرامری ۶ درس..." onkeyup="filterLessons()">
+            <div id="lessonsContainer"></div>
+        </div>
+
+        <!-- ۳. بخش فلش‌کارت سه‌بعدی لایتنر -->
+        <div id="flashcards" class="tab-content">
+            <div class="card" style="text-align: center;">
+                <h2>سیستم یادگیری لایتنر و فلش‌کارت سه‌بعدی</h2>
+                <p style="color: var(--text-muted);">برای مشاهده معنی، مترادف و مثال، روی کارت کلیک کنید.</p>
+                <div class="scene">
+                    <div class="card-3d" id="flashcard3d" onclick="flipCard()">
+                        <div class="card-face card-face-front">
+                            <h2 id="cardFrontText" style="margin: 0; color: var(--primary); font-size: 32px;">Word</h2>
+                            <span class="badge" style="margin-top: 15px;">کلمه انگلیسی (کلیک برای چرخش)</span>
+                        </div>
+                        <div class="card-face card-face-back">
+                            <h3 id="cardBackText" style="margin: 0; color: var(--accent); font-size: 26px;">معنی</h3>
+                            <p id="cardBackDetails" style="font-size: 14px; color: var(--text-muted); margin-top: 12px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 25px;">
+                    <button class="btn" onclick="prevCard()">← کارت قبلی</button>
+                    <button class="btn btn-success" onclick="speakCurrentWord()">🔊 تلفظ صوتی هوشمند</button>
+                    <button class="btn" onclick="nextCard()">کارت بعدی →</button>
+                </div>
             </div>
         </div>
 
-        <!-- 3. آزمون جامع ۲۸ سوالی -->
+        <!-- ۴. بخش افعال بی‌قاعده، مترادف‌ها و نکات طلایی امتحان -->
+        <div id="verbs" class="tab-content">
+            <div class="card">
+                <h2>فهرست افعال بی‌قاعده مهم</h2>
+                <input type="text" id="verbSearch" class="search-box" placeholder="جستجو در افعال بی‌قاعده..." onkeyup="filterVerbs()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>فعل ساده (Base)</th>
+                            <th>گذشته ساده (Past)</th>
+                            <th>قسمت سوم (Past Participle)</th>
+                            <th>معنی فارسی</th>
+                        </tr>
+                    </thead>
+                    <tbody id="verbsTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top: 30px;">
+                <h2>مترادف‌ها و متضادهای پرکاربرد</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>کلمه اول</th>
+                            <th>رابطه و کلمه دوم</th>
+                            <th>معنی فارسی</th>
+                        </tr>
+                    </thead>
+                    <tbody id="synAntContainer"></tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top: 30px;">
+                <h2>نکته‌های طلایی امتحان</h2>
+                <div id="goldenTipsContainer"></div>
+            </div>
+        </div>
+
+        <!-- ۵. بخش آزمون جامع ۲۸ سوالی -->
         <div id="exam" class="tab-content">
             <div class="card">
-                <h2>بخش اول، دوم و سوم: آزمون جامع تألیفی</h2>
-                <p>این آزمون شامل سوالات واژگان، دستور زبان و ترجمه مطابق با جزوه مرجع است[span_18](start_span)[span_18](end_span).</p>
-                <button class="btn btn-success" onclick="startExam()">شروع آزمون جامع</button>
-                <form id="examForm" style="margin-top: 20px;"></form>
-                <div id="examResult" class="card" style="display:none; margin-top:20px;"></div>
+                <h2>آزمون جامع تألیفی (شامل واژگان، دستور زبان و ترجمه)</h2>
+                <p style="color: var(--text-muted);">این آزمون دقیقاً شامل ۲۸ سوال استاندارد بر اساس جزوه راهنما است[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span).</p>
+                <button class="btn btn-success" onclick="initExam()">شروع / ریست آزمون جامع</button>
+                <form id="examForm" style="margin-top: 25px;"></form>
+                <div id="examResult" class="card" style="display: none; margin-top: 25px;"></div>
             </div>
         </div>
 
-        <!-- 4. برنامه مرور ۷ روزه -->
-        <div id="plan" class="tab-content">
-            <div class="card">
-                <h2>برنامه مرور پیشنهادی (برگرفته از جزوه)</h2>
-                <ul>
-                    <li><b>روز اول:</b> درس ۱ و واژگان شخصیت + تمرین be[span_19](start_span)[span_19](end_span)</li>
-                    <li><b>روز دوم:</b> درس ۲ و حال استمراری + مالکیت[span_20](start_span)[span_20](end_span)</li>
-                    <li><b>روز سوم:</b> درس ۳ و حال ساده + do/does[span_21](start_span)[span_21](end_span)</li>
-                    <li><b>روز چهارم:</b> درس ۴ و پرسش‌های WH + قیدهای تکرار[span_22](start_span)[span_22](end_span)</li>
-                    <li><b>روز پنجم:</b> درس ۵ و گذشته ساده باقاعده + was/were[span_23](start_span)[span_23](end_span)</li>
-                    <li><b>روز ششم:</b> درس ۶ و افعال بی‌قاعده + ضمایر مفعولی[span_24](start_span)[span_24](end_span)</li>
-                    <li><b>روز هفتم:</b> مرور افعال بی‌قاعده و حل آزمون جامع بدون نگاه به پاسخ‌نامه[span_25](start_span)[span_25](end_span)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 5. پنل مدیریت -->
+        <!-- ۶. پنل مدیریت پیشرفته -->
         <div id="admin" class="tab-content">
             <div class="card">
-                <h2>پنل مدیریت پیشرفته محتوا</h2>
+                <h2>⚙️ پنل مدیریت محتوا و پایگاه داده (Admin Dashboard)</h2>
+                <p style="color: var(--text-muted);">می‌توانید کلمات دلخواه خود را به هر یک از درس‌ها اضافه کنید و در سیستم ذخیره نمایید.</p>
+                <hr style="border-color: var(--border-color); margin: 25px 0;">
+                
+                <h3>افزودن واژه جدید به پایگاه داده</h3>
                 <div class="form-group">
-                    <label>انتخاب درس:</label>
-                    <select id="adminLesson">
-                        <option value="0">درس ۱: Personality</option>
-                        <option value="1">درس ۲: Travel</option>
-                        <option value="2">درس ۳: Festivals and Ceremonies</option>
-                        <option value="3">درس ۴: Services</option>
-                        <option value="4">درس ۵: Media</option>
-                        <option value="5">درس ۶: Health and Injuries</option>
+                    <label>انتخاب درس هدف:</label>
+                    <select id="adminLessonSelect">
+                        <option value="0">درس اول: Personality (شخصیت)</option>
+                        <option value="1">درس دوم: Travel (سفر)</option>
+                        <option value="2">درس سوم: Festivals and Ceremonies (جشن‌ها)</option>
+                        <option value="3">درس چهارم: Services (خدمات)</option>
+                        <option value="4">درس پنجم: Media (رسانه)</option>
+                        <option value="5">درس ششم: Health and Injuries (سلامتی)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>کلمه انگلیسی:</label>
-                    <input type="text" id="addWord" placeholder="مثال: Brave">
+                    <label>واژه انگلیسی:</label>
+                    <input type="text" id="addWord" placeholder="مثال: Clever">
                 </div>
                 <div class="form-group">
                     <label>معنی فارسی:</label>
-                    <input type="text" id="addTrans" placeholder="مثال: شجاع">
+                    <input type="text" id="addTrans" placeholder="مثال: باهوش">
                 </div>
-                <button class="btn" onclick="addWordAdmin()">افزودن واژه به پایگاه داده</button>
+                <div class="form-group">
+                    <label>مترادف (Synonym):</label>
+                    <input type="text" id="addSyn" placeholder="مثال: Smart">
+                </div>
+                <div class="form-group">
+                    <label>متضاد (Antonym):</label>
+                    <input type="text" id="addAnt" placeholder="مثال: Foolish">
+                </div>
+                <button class="btn btn-success" onclick="addWordAdmin()">➕ ثبت و ذخیره واژه جدید</button>
+
+                <hr style="border-color: var(--border-color); margin: 35px 0;">
+                
+                <h3>مدیریت و تنظیمات سیستم</h3>
+                <button class="btn btn-danger" onclick="resetFactory()">🔄 بازنشانی کلیه داده‌ها به حالت کارخانه</button>
             </div>
         </div>
+
     </div>
 
-    <script>
-        const lessonsData = [
-            {
-                number: 1, title: "Personality (شخصیت)", grammar: "فعل be در زمان حال ساده (am/is/are) برای توصیف ویژگی‌های اخلاقی[span_26](start_span)[span_26](end_span).",
-                vocab: [
-                    {word: "Shy", trans: "خجالتی", ex: "My brother is shy[span_27](start_span)[span_27](end_span)."},
-                    {word: "Brave", trans: "شجاع", ex: "The brave girl helps others[span_28](start_span)[span_28](end_span)."},
-                    {word: "Hard-working", trans: "سخت‌کوش", ex: "Our teacher is hard-working[span_29](start_span)[span_29](end_span)."},
-                    {word: "Kind", trans: "مهربان", ex: "She is kind to children[span_30](start_span)[span_30](end_span)."},
-                    {word: "Patient", trans: "صبور", ex: "Be patient, please[span_31](start_span)[span_31](end_span)."},
-                    {word: "Polite", trans: "مؤدب", ex: "He is always polite[span_32](start_span)[span_32](end_span)."}
-                ]
-            },
-            {
-                number: 2, title: "Travel (سفر)", grammar: "حال استمراری (am/is/are + V-ing) و مالکیت با s' و of[span_33](start_span)[span_33](end_span).",
-                vocab: [
-                    {word: "Ticket", trans: "بلیت", ex: "I have a bus ticket[span_34](start_span)[span_34](end_span)."},
-                    {word: "Passport", trans: "گذرنامه", ex: "Where is your passport?[span_35](start_span)[span_35](end_span)"},
-                    {word: "Airport", trans: "فرودگاه", ex: "They are at the airport[span_36](start_span)[span_36](end_span)."},
-                    {word: "Receptionist", trans: "پذیرشگر", ex: "The receptionist is helpful[span_37](start_span)[span_37](end_span)."}
-                ]
-            },
-            {
-                number: 3, title: "Festivals and Ceremonies (جشن‌ها و مراسم)", grammar: "حال ساده با do/does و ضمایر ملکی (my, your, his, her, its, our, their)[span_38](start_span)[span_38](end_span).",
-                vocab: [
-                    {word: "Ceremony", trans: "مراسم، جشن", ex: "The ceremony starts at noon[span_39](start_span)[span_39](end_span)."},
-                    {word: "Celebrate", trans: "جشن گرفتن", ex: "We celebrate Nowruz[span_40](start_span)[span_40](end_span)."},
-                    {word: "Fireworks", trans: "آتش‌بازی", ex: "People watch fireworks[span_41](start_span)[span_41](end_span)."},
-                    {word: "Lunar", trans: "قمری", ex: "Lunar calendar[span_42](start_span)[span_42](end_span)."}
-                ]
-            },
-            {
-                number: 4, title: "Services (خدمات)", grammar: "پرسش‌های WH و قیدهای تکرار (always, usually, sometimes, never, often)[span_43](start_span)[span_43](end_span).",
-                vocab: [
-                    {word: "Service", trans: "خدمت، سرویس", ex: "The bank offers a useful service[span_44](start_span)[span_44](end_span)."},
-                    {word: "Employee", trans: "کارمند", ex: "My aunt is an employee[span_45](start_span)[span_45](end_span)."},
-                    {word: "Emergency", trans: "وضعیت اضطراری", ex: "Call for help in an emergency[span_46](start_span)[span_46](end_span)."}
-                ]
-            },
-            {
-                number: 5, title: "Media (رسانه)", grammar: "گذشته ساده افعال باقاعده (ed-) و گذشته فعل be (was/were)[span_47](start_span)[span_47](end_span).",
-                vocab: [
-                    {word: "Media", trans: "رسانه", ex: "The media are important[span_48](start_span)[span_48](end_span)."},
-                    {word: "Online", trans: "برخط، آنلاین", ex: "I read news online[span_49](start_span)[span_49](end_span)."},
-                    {word: "Interview", trans: "مصاحبه", ex: "We watched an interview[span_50](start_span)[span_50](end_span)."}
-                ]
-            },
-            {
-                number: 6, title: "Health and Injuries (سلامتی و آسیب‌دیدگی‌ها)", grammar: "گذشته ساده افعال بی‌قاعده (break->broke, fall->fell) و ضمایر مفعولی[span_51](start_span)[span_51](end_span).",
-                vocab: [
-                    {word: "Health", trans: "سلامتی", ex: "Health is important[span_52](start_span)[span_52](end_span)."},
-                    {word: "Accident", trans: "حادثه، تصادف", ex: "He had an accident yesterday[span_53](start_span)[span_53](end_span)."},
-                    {word: "Plaster", trans: "چسب زخم، گچ", ex: "She put a plaster on her finger[span_54](start_span)[span_54](end_span)."}
-                ]
-            }
-        ];
-
-        let db = JSON.parse(localStorage.getItem('pdf_exact_db')) || lessonsData;
-
-        function toggleTheme() { document.body.classList.toggle('dark-mode'); }
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        function renderLessons() {
-            const container = document.getElementById('lessonsContainer');
-            container.innerHTML = '';
-            db.forEach(l => {
-                let rows = l.vocab.map(v => `<tr><td><b>${v.word}</b></td><td>${v.trans}</td><td><i>${v.ex}</i></td></tr>`).join('');
-                container.innerHTML += `
-                    <div class="card lesson-card">
-                        <h3>درس ${l.number}: ${l.title}</h3>
-                        <p><b>دستور زبان و نکات:</b> ${l.grammar}</p>
-                        <table><tr><th>واژه</th><th>معنی</th><th>مثال کاربردی</th></tr>${rows}</table>
-                    </div>
-                `;
-            });
-        }
-
-        function filterLessons() {
-            let q = document.getElementById('lessonSearch').value.toLowerCase();
-            document.querySelectorAll('.lesson-card').forEach(c => {
-                c.style.display = c.innerText.toLowerCase().includes(q) ? 'block' : 'none';
-            });
-        }
-
-        function addWordAdmin() {
-            let idx = document.getElementById('adminLesson').value;
-            let word = document.getElementById('addWord').value;
-            let trans = document.getElementById('addTrans').value;
-            if(!word || !trans) { alert('کلمه و معنی را وارد کنید'); return; }
-            db[idx].vocab.push({word, trans, ex: `${word} example.`});
-            localStorage.setItem('pdf_exact_db', JSON.stringify(db));
-            renderLessons();
-            alert('با موفقیت اضافه شد!');
-        }
-
-        const examQuestions = [
-            {q: "۱. معنی کلمه shy کدام است؟[span_55](start_span)[span_55](end_span)", options: ["الف) شجاع", "ب) خجالتی", "ج) صبور"], correct: 1},
-            {q: "۲. معنی کلمه receptionist چیست؟[span_56](start_span)[span_56](end_span)", options: ["الف) پذیرشگر", "ب) مسافر", "ج) راننده"], correct: 0},
-            {q: "۳. متضاد کلمه rude کدام است؟[span_57](start_span)[span_57](end_span)", options: ["الف) polite", "ب) kind", "ج) helpful"], correct: 0},
-            {q: "۴. معنی fireworks چیست؟[span_58](start_span)[span_58](end_span)", options: ["الف) هدیه", "ب) آتش بازی", "ج) روزنامه"], correct: 1},
-            {q: "۵. تکمیل کنید: The post office is a public ...[span_59](start_span)[span_59](end_span)", options: ["الف) service", "ب) injury"], correct: 0},
-            {q: "۶. شکل صحیح: My friends ... very kind.[span_60](start_span)[span_60](end_span)", options: ["الف) are", "ب) is"], correct: 0}
-        ];
-
-        function startExam() {
-            const form = document.getElementById('examForm');
-            form.innerHTML = examQuestions.map((q, idx) => `
-                <div style="margin-bottom:15px; padding:15px; border:1px solid var(--border); border-radius:5px;">
-                    <p><b>${q.q}</b></p>
-                    ${q.options.map((opt, oIdx) => `<label style="display:block; margin-bottom:5px;"><input type="radio" name="q${idx}" value="${oIdx}"> ${opt}</label>`).join('')}
-                </div>
-            `).join('') + `<button type="button" class="btn btn-success" onclick="checkExam()">ثبت و دریافت پاسخ‌نامه تشریحی</button>`;
-            document.getElementById('examResult').style.display = 'none';
-        }
-
-        function checkExam() {
-            let score = 0;
-            examQuestions.forEach((q, idx) => {
-                let sel = document.querySelector(`input[name="q${idx}"]:checked`);
-                if(sel && parseInt(sel.value) === q.correct) score++;
-            });
-            const res = document.getElementById('examResult');
-            res.style.display = 'block';
-            res.innerHTML = `
-                <h3>نتیجه آزمون: نمره ${score} از ${examQuestions.length}</h3>
-                <hr>
-                <h4>پاسخ‌نامه تشریحی (برگرفته از فایل مرجع):</h4>
-                <ul>
-                    <li>سوال ۱: گزینه ب - shy یعنی خجالتی[span_61](start_span)[span_61](end_span).</li>
-                    <li>سوال ۲: گزینه الف - receptionist یعنی پذیرشگر[span_62](start_span)[span_62](end_span).</li>
-                    <li>سوال ۳: گزینه الف - polite متضاد rude است[span_63](start_span)[span_63](end_span)[span_64](start_span)[span_64](end_span).</li>
-                    <li>سوال ۴: گزینه ب - fireworks یعنی آتش‌بازی[span_65](start_span)[span_65](end_span).</li>
-                    <li>سوال ۵: گزینه الف - اداره پست یک خدمت عمومی (service) است[span_66](start_span)[span_66](end_span).</li>
-                    <li>سوال ۶: گزینه الف - چون friends جمع است are می‌آید[span_67](start_span)[span_67](end_span).</li>
-                </ul>
-            `;
-        }
-
-        renderLessons();
-    </script>
+    <!-- اتصال فایل منطق جاوااسکریپت -->
+    <script src="app.js"></script>
 </body>
 </html>
