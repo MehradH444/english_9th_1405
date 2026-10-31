@@ -3,357 +3,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش جامع زبان انگلیسی نهم (Prospect 3 - ۱۴۰۵)</title>
+    <title>سایت جامع آموزش زبان انگلیسی نهم (Prospect 3 - چاپ ۱۴۰۵)</title>
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --bg-color: #f8fafc;
+            --bg-color: #f1f5f9;
             --card-bg: #ffffff;
-            --text-color: #1e293b;
-            --accent-color: #10b981;
-            --danger-color: #ef4444;
+            --text-color: #0f172a;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --border: #cbd5e1;
+            --header-bg: linear-gradient(135deg, #1e3a8a, #3b82f6);
         }
-        body {
-            font-family: Tahoma, sans-serif, Arial;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --border: #334155;
+            --header-bg: linear-gradient(135deg, #0f172a, #1e293b);
         }
+
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; transition: background 0.3s; }
+        
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--header-bg);
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        .theme-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
         nav {
             display: flex;
             justify-content: center;
-            background: #1e293b;
+            background: #0f172a;
             padding: 10px;
-            gap: 15px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
+
         nav button {
             background: transparent;
             border: none;
             color: white;
-            font-size: 16px;
+            padding: 10px 18px;
+            font-size: 15px;
             cursor: pointer;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: 0.3s;
+            border-radius: 6px;
+            transition: 0.2s;
         }
-        nav button:hover, nav button.active {
-            background: var(--primary-color);
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
+
+        nav button:hover, nav button.active { background: var(--primary); }
+
+        .container { max-width: 1100px; margin: 20px auto; padding: 15px; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .card {
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .lesson-card, .admin-section {
+            border-radius: 10px;
+            padding: 20px;
             margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            background: #fff;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        h2, h3 { color: var(--primary-color); }
-        table {
+
+        .search-box {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            background: var(--card-bg);
+            color: var(--text-color);
         }
-        table, th, td {
-            border: 1px solid #cbd5e1;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-        th { background: #f1f5f9; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid var(--border); padding: 10px; text-align: center; }
+        th { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+
         .btn {
-            background: var(--primary-color);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px 16px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
+            transition: 0.2s;
         }
-        .btn:hover { background: var(--secondary-color); }
-        .btn-danger { background: var(--danger-color); }
-        .btn-danger:hover { background: #dc2626; }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px 0;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
-            box-sizing: border-box;
+        .btn:hover { background: var(--primary-hover); }
+        .btn-danger { background: var(--danger); }
+        .btn-success { background: var(--accent); }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
         }
-        .hidden { display: none; }
+        .flashcard {
+            width: 320px;
+            height: 180px;
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px;
+            background: var(--card-bg); color: var(--text-color);
+        }
+
+        .badge {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3)</h1>
-        <p>نسخه ۱۴۰۵ - همراه با واژگان، گرامر، آزمون و پنل مدیریت کامل</p>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 حالت شب/روز</button>
+        <h1>برنامه جامع زبان انگلیسی پایه نهم (Prospect 3)</h1>
+        <p>ویژه چاپ ۱۴۰۵ | آموزش واژگان، گرامر، متون، افعال بی‌قاعده، آزمون جامع و پنل مدیریت</p>
     </header>
 
     <nav>
-        <button onclick="switchTab('lessons')" class="active">آموزش ۶ درس</button>
-        <button onclick="switchTab('exam')">آزمون جامع (۲۸ سوالی)</button>
-        <button onclick="switchTab('admin')">پنل مدیریت (Admin Panel)</button>
+        <button onclick="openTab('lessons')" class="active">📚 دروس و واژگان</button>
+        <button onclick="openTab('flashcards')">🎴 فلش‌کارت لایتنر</button>
+        <button onclick="openTab('verbs')">📋 افعال بی‌قاعده</button>
+        <button onclick="openTab('exam')">📝 آزمون جامع (۲۸ سوال)</button>
+        <button onclick="openTab('admin')">⚙️ پنل مدیریت (Admin)</button>
     </nav>
 
     <div class="container">
-        <!-- بخش آموزش دروس -->
-        <div id="lessons-tab" class="tab-content">
-            <h2>محتوای آموزشی و واژگان ۶ درس</h2>
-            <div id="lessons-container"></div>
+        <!-- 1. آموزش دروس -->
+        <div id="lessons" class="tab-content active">
+            <input type="text" id="lessonSearch" class="search-box" placeholder="🔍 جستجوی واژه، مترادف یا متضاد در ۶ درس..." onkeyup="filterLessons()">
+            <div id="lessonsContainer"></div>
         </div>
 
-        <!-- بخش آزمون جامع -->
-        <div id="exam-tab" class="tab-content hidden">
-            <h2>آزمون جامع تألیفی (پایه نهم)</h2>
-            <div id="quiz-container">
-                <p>این آزمون شامل سوالات استاندارد واژگان، دستور زبان و ترجمه است[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span).</p>
-                <button class="btn" onclick="startExam()">شروع آزمون</button>
-                <div id="exam-questions" style="margin-top: 20px;"></div>
+        <!-- 2. فلش کارت -->
+        <div id="flashcards" class="tab-content">
+            <div class="card flashcard-container">
+                <h3>مرور واژگان با فلش‌کارت</h3>
+                <div class="flashcard" id="cardElement" onclick="flipCard()">
+                    <span id="cardText">کلیک کنید تا کلمه نمایش داده شود</span>
+                </div>
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button class="btn" onclick="prevCard()">کارت قبلی</button>
+                    <button class="btn btn-success" onclick="speakWord()">🔊 تلفظ صوتی</button>
+                    <button class="btn" onclick="nextCard()">کارت بعدی</button>
+                </div>
             </div>
         </div>
 
-        <!-- بخش پنل مدیریت -->
-        <div id="admin-tab" class="tab-content hidden">
-            <h2>پنل مدیریت و ویرایش محتوا (Admin Dashboard)</h2>
-            <div class="admin-section">
-                <h3>افزودن واژه جدید به درس‌ها</h3>
-                <label>انتخاب درس:</label>
-                <select id="admin-lesson-select">
-                    <option value="0">درس اول: Personality</option>
-                    <option value="1">درس دوم: Travel</option>
-                    <option value="2">درس سوم: Festivals and Ceremonies</option>
-                    <option value="3">درس چهارم: Services</option>
-                    <option value="4">درس پنجم: Media</option>
-                    <option value="5">درس ششم: Health and Injuries</option>
-                </select>
-                <label>کلمه انگلیسی:</label>
-                <input type="text" id="new-word" placeholder="مثال: Brave">
-                <label>معنی فارسی:</label>
-                <input type="text" id="new-trans" placeholder="مثال: شجاع">
-                <label>مترادف‌ها:</label>
-                <input type="text" id="new-syn" placeholder="مثال: Courageous">
-                <label>متضادها:</label>
-                <input type="text" id="new-ant" placeholder="مثال: Cowardly">
-                <button class="btn" onclick="addNewVocabulary()">ثبت واژه جدید در سیستم</button>
+        <!-- 3. افعال بی‌قاعده -->
+        <div id="verbs" class="tab-content">
+            <div class="card">
+                <h3>جدول کامل افعال بی‌قاعده کتاب نهم</h3>
+                <input type="text" id="verbSearch" class="search-box" placeholder="جستجوی فعل..." onkeyup="filterVerbs()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>فعل ساده (Base Form)</th>
+                            <th>گذشته (Past Simple)</th>
+                            <th>قسمت سوم (Past Participle)</th>
+                            <th>معنی فارسی</th>
+                        </tr>
+                    </thead>
+                    <tbody id="verbsTableBody"></tbody>
+                </table>
             </div>
-            <div class="admin-section">
-                <h3>مدیریت و آمار داده‌ها</h3>
-                <p>تعداد کل دروس فعال: <span id="stat-lessons">6</span></p>
-                <p>وضعیت پایگاه داده: <span style="color: var(--accent-color);">متصل و پایدار (Local Storage Active)</span></p>
-                <button class="btn btn-danger" onclick="resetData()">بازنشانی به تنظیمات پیش‌فرض کارخانه</button>
+        </div>
+
+        <!-- 4. آزمون جامع -->
+        <div id="exam" class="tab-content">
+            <div class="card">
+                <h2>آزمون جامع ۲۸ سوالی تألیفی (Prospect 3)</h2>
+                <p>این آزمون تمامی بخش‌های واژگان، گرامر، ترجمه و ساختارها را ارزیابی می‌کند[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).</p>
+                <button class="btn btn-success" onclick="loadExamQuestions()">شروع / بازنشانی آزمون</button>
+                <form id="examForm" style="margin-top: 20px;"></form>
+                <div id="examResult" class="card" style="display: none; margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- 5. پنل مدیریت -->
+        <div id="admin" class="tab-content">
+            <div class="card">
+                <h2>⚙️ پنل مدیریت محتوا و داده‌ها (Admin Dashboard)</h2>
+                <p>از این بخش می‌توانید محتوای جدید اضافه کرده یا لغات درس‌ها را مدیریت کنید.</p>
+                <hr style="border-color: var(--border);">
+                
+                <h3>افزودن واژه جدید به درس</h3>
+                <div class="input-group">
+                    <label>انتخاب درس:</label>
+                    <select id="adminLessonIndex">
+                        <option value="0">درس اول: Personality</option>
+                        <option value="1">درس دوم: Travel</option>
+                        <option value="2">درس سوم: Festivals and Ceremonies</option>
+                        <option value="3">درس چهارم: Services</option>
+                        <option value="4">درس پنجم: Media</option>
+                        <option value="5">درس ششم: Health and Injuries</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>واژه انگلیسی:</label>
+                    <input type="text" id="addWord" placeholder="مثال: Patient">
+                </div>
+                <div class="input-group">
+                    <label>معنی فارسی:</label>
+                    <input type="text" id="addTrans" placeholder="مثال: صبور">
+                </div>
+                <div class="input-group">
+                    <label>مترادف (Synonym):</label>
+                    <input type="text" id="addSyn" placeholder="مثال: Calm">
+                </div>
+                <div class="input-group">
+                    <label>متضاد (Antonym):</label>
+                    <input type="text" id="addAnt" placeholder="مثال: Impatient">
+                </div>
+                <button class="btn btn-success" onclick="addVocabularyAdmin()">➕ ثبت واژه جدید</button>
+
+                <hr style="border-color: var(--border); margin: 25px 0;">
+                
+                <h3>تنظیمات دیتابیس</h3>
+                <button class="btn btn-danger" onclick="resetDatabase()">🔄 بازنشانی کلیه داده‌ها به حالت اولیه کارخانه</button>
             </div>
         </div>
     </div>
 
     <script>
-        // داده‌های پایه برگرفته از فایل جامع راهنما
-        const defaultData = [
+        // دیتابیس جامع ۶ درس کامل بر اساس فایل راهنما
+        const initialDatabase = [
             {
-                title: "درس اول: Personality (شخصیت)",
+                number: 1, title: "Personality (شخصیت)", grammar: "فعل be در زمان حال ساده (am/is/are) برای توصیف ویژگی‌های اخلاقی[span_20](start_span)[span_20](end_span)",
                 vocab: [
-                    {word: "Shy", trans: "خجالتی", syn: "Cowardly", ant: "Brave"},
-                    {word: "Brave", trans: "شجاع", syn: "Courageous", ant: "Shy"},
-                    {word: "Hard-working", trans: "سخت‌کوش", syn: "Diligent", ant: "Lazy"},
-                    {word: "Kind", trans: "مهربان", syn: "Friendly", ant: "Unkind, Rude"}
-                ],
-                grammar: "فعل be در زمان حال ساده (am/is/are) برای توصیف ویژگی‌های اخلاقی[span_21](start_span)[span_21](end_span)."
+                    {word: "Shy", trans: "خجالتی", syn: "-", ant: "Brave", ex: "My brother is shy[span_21](start_span)[span_21](end_span)."},
+                    {word: "Brave", trans: "شجاع", syn: "Courageous", ant: "Shy / Afraid", ex: "The brave girl helps others[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span)."},
+                    {word: "Hard-working", trans: "سخت‌کوش", syn: "Diligent", ant: "Lazy", ex: "Our teacher is hard-working[span_24](start_span)[span_24](end_span)."},
+                    {word: "Kind", trans: "مهربان", syn: "Friendly", ant: "Unkind / Rude", ex: "She is kind to children[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span)."},
+                    {word: "Patient", trans: "صبور", syn: "Calm", ant: "Impatient", ex: "Be patient, please[span_27](start_span)[span_27](end_span)."},
+                    {word: "Polite", trans: "مؤدب", syn: "Courteous", ant: "Rude", ex: "He is always polite[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span)."},
+                    {word: "Careful", trans: "بااحتیاط", syn: "Cautious", ant: "Careless", ex: "Be careful[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span)."},
+                    {word: "Lazy", trans: "تنبل", syn: "Idle", ant: "Hard-working", ex: "I am not lazy[span_32](start_span)[span_32](end_span)."}
+                ]
             },
             {
-                title: "درس دوم: Travel (سفر)",
+                number: 2, title: "Travel (سفر)", grammar: "زمان حال استمراری (am/is/are + V-ing) و مالکیت با s' و of[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)",
                 vocab: [
-                    {word: "Ticket", trans: "بلیت", syn: "Pass", ant: "-"},
-                    {word: "Passport", trans: "گذرنامه", syn: "Travel document", ant: "-"},
-                    {word: "Airport", trans: "فرودگاه", syn: "-", ant: "-"},
-                    {word: "Destination", trans: "مقصد", syn: "Goal", ant: "Origin"}
-                ],
-                grammar: "حال استمراری (am/is/are + V-ing) برای کارهایی که در جریان است[span_22](start_span)[span_22](end_span)."
+                    {word: "Travel", trans: "سفر کردن", syn: "Journey", ant: "Stay", ex: "We travel in summer[span_35](start_span)[span_35](end_span)."},
+                    {word: "Ticket", trans: "بلیت", syn: "Pass", ant: "-", ex: "I have a bus ticket[span_36](start_span)[span_36](end_span)."},
+                    {word: "Passport", trans: "گذرنامه", syn: "Travel doc", ant: "-", ex: "Where is your passport?[span_37](start_span)[span_37](end_span)"},
+                    {word: "Airport", trans: "فرودگاه", syn: "-", ant: "-", ex: "They are at the airport[span_38](start_span)[span_38](end_span)."},
+                    {word: "Destination", trans: "مقصد", syn: "Goal", ant: "Origin", ex: "Shiraz is our destination."}
+                ]
             },
             {
-                title: "درس سوم: Festivals and Ceremonies (جشن‌ها و مراسم)",
+                number: 3, title: "Festivals and Ceremonies (جشن‌ها و مراسم)", grammar: "زمان حال ساده با do/does برای بیان عادت‌ها و رسومات[span_39](start_span)[span_39](end_span)[span_40](start_span)[span_40](end_span)",
                 vocab: [
-                    {word: "Ceremony", trans: "مراسم، جشن", syn: "Ritual", ant: "-"},
-                    {word: "Fireworks", trans: "آتش‌بازی", syn: "-", ant: "-"},
-                    {word: "Lunar", trans: "قمری", syn: "-", ant: "Solar"},
-                    {word: "Celebrate", trans: "جشن گرفتن", syn: "Observe", ant: "Mourn"}
-                ],
-                grammar: "حال ساده با do/does برای عادت‌ها و رسومات[span_23](start_span)[span_23](end_span)."
+                    {word: "Celebrate", trans: "جشن گرفتن", syn: "Observe", ant: "Mourn", ex: "We celebrate Nowruz[span_41](start_span)[span_41](end_span)."},
+                    {word: "Fireworks", trans: "آتش‌بازی", syn: "-", ant: "-", ex: "People watch fireworks[span_42](start_span)[span_42](end_span)."},
+                    {word: "Lunar", trans: "قمری", syn: "-", ant: "Solar", ex: "Norooz is solar[span_43](start_span)[span_43](end_span)."},
+                    {word: "National anthem", trans: "سرود ملی", syn: "-", ant: "-", ex: "They sing national anthem[span_44](start_span)[span_44](end_span)."}
+                ]
             },
             {
-                title: "درس چهارم: Services (خدمات)",
+                number: 4, title: "Services (خدمات)", grammar: "پرسش‌های WH (Where, What time, ...) و قیدهای تکرار[span_45](start_span)[span_45](end_span)[span_46](start_span)[span_46](end_span)",
                 vocab: [
-                    {word: "Service", trans: "خدمت، سرویس", syn: "-", ant: "-"},
-                    {word: "Employee", trans: "کارمند", syn: "Worker", ant: "Employer"},
-                    {word: "Emergency", trans: "وضعیت اضطراری", syn: "Crisis", ant: "Calm"},
-                    {word: "Post office", trans: "اداره پست", syn: "-", ant: "-"}
-                ],
-                grammar: "پرسش‌های WH و قیدهای تکرار (always, usually, sometimes, never)[span_24](start_span)[span_24](end_span)."
+                    {word: "Service", trans: "خدمت", syn: "-", ant: "-", ex: "Useful service[span_47](start_span)[span_47](end_span)."},
+                    {word: "Emergency", trans: "وضعیت اضطراری", syn: "Crisis", ant: "Calm", ex: "Call for help in emergency[span_48](start_span)[span_48](end_span)."},
+                    {word: "Employee", trans: "کارمند", syn: "Worker", ant: "Employer", ex: "My aunt is an employee[span_49](start_span)[span_49](end_span)."},
+                    {word: "Recharge", trans: "شارژ کردن", syn: "Refill", ant: "-", ex: "Recharge my phone[span_50](start_span)[span_50](end_span)."}
+                ]
             },
             {
-                title: "درس پنجم: Media (رسانه)",
+                number: 5, title: "Media (رسانه)", grammar: "زمان گذشته ساده با افعال باقاعده (ed-) و گذشته be (was/were)[span_51](start_span)[span_51](end_span)[span_52](start_span)[span_52](end_span)",
                 vocab: [
-                    {word: "Media", trans: "رسانه", syn: "Information channels", ant: "-"},
-                    {word: "Online", trans: "برخط، آنلاین", syn: "-", ant: "Offline"},
-                    {word: "Interview", trans: "مصاحبه", syn: "-", ant: "-"},
-                    {word: "Reliable", trans: "قابل اعتماد", syn: "Trustworthy", ant: "Unreliable"}
-                ],
-                grammar: "گذشته ساده افعال باقاعده (ed) و گذشته فعل be (was/were)[span_25](start_span)[span_25](end_span)."
+                    {word: "Media", trans: "رسانه", syn: "-", ant: "-", ex: "Media are important[span_53](start_span)[span_53](end_span)."},
+                    {word: "Online", trans: "برخط، آنلاین", syn: "Connected", ant: "Offline", ex: "I read news online[span_54](start_span)[span_54](end_span)."},
+                    {word: "Interview", trans: "مصاحبه", syn: "-", ant: "-", ex: "We watched an interview[span_55](start_span)[span_55](end_span)."},
+                    {word: "Download", trans: "بارگیری کردن", syn: "Get file", ant: "Upload", ex: "He downloaded a file[span_56](start_span)[span_56](end_span)."}
+                ]
             },
             {
-                title: "درس ششم: Health and Injuries (سلامتی و آسیب‌دیدگی‌ها)",
+                number: 6, title: "Health and Injuries (سلامتی و آسیب‌دیدگی‌ها)", grammar: "زمان گذشته ساده با افعال بی‌قاعده و ضمایر مفعولی (me, him, her, us, them)[span_57](start_span)[span_57](end_span)[span_58](start_span)[span_58](end_span)",
                 vocab: [
-                    {word: "Health", trans: "سلامتی", syn: "Wellness", ant: "Sickness"},
-                    {word: "Accident", trans: "حادثه، تصادف", syn: "Crash", ant: "-"},
-                    {word: "Plaster", trans: "چسب زخم، گچ", syn: "-", ant: "-"},
-                    {word: "Bruise", trans: "کبودی", syn: "-", ant: "-"}
-                ],
-                grammar: "گذشته ساده افعال بی‌قاعده و ضمایر مفعولی (me, him, her, us, them)[span_26](start_span)[span_26](end_span)."
+                    {word: "Health", trans: "سلامتی", syn: "Wellness", ant: "Sickness", ex: "Health is important[span_59](start_span)[span_59](end_span)."},
+                    {word: "Injury", trans: "آسیب‌دیدگی", syn: "Damage", ant: "-", ex: "Injury was not serious[span_60](start_span)[span_60](end_span)."},
+                    {word: "Accident", trans: "حادثه، تصادف", syn: "Crash", ant: "-", ex: "He had an accident[span_61](start_span)[span_61](end_span)."},
+                    {word: "Plaster", trans: "چسب زخم، گچ", syn: "Bandage", ant: "-", ex: "She put a plaster[span_62](start_span)[span_62](end_span)."}
+                ]
             }
         ];
 
-        let appData = JSON.parse(localStorage.getItem('english_9th_data')) || defaultData;
+        const irregularVerbsData = [
+            {base: "go", past: "went", pp: "gone", trans: "رفتن[span_63](start_span)[span_63](end_span)"},
+            {base: "come", past: "came", pp: "come", trans: "آمدن[span_64](start_span)[span_64](end_span)"},
+            {base: "see", past: "saw", pp: "seen", trans: "دیدن[span_65](start_span)[span_65](end_span)"},
+            {base: "have", past: "had", pp: "had", trans: "داشتن[span_66](start_span)[span_66](end_span)"},
+            {base: "do", past: "did", pp: "done", trans: "انجام دادن[span_67](start_span)[span_67](end_span)"},
+            {base: "break", past: "broke", pp: "broken", trans: "شکستن[span_68](start_span)[span_68](end_span)"},
+            {base: "fall", past: "fell", pp: "fallen", trans: "افتادن[span_69](start_span)[span_69](end_span)"},
+            {base: "buy", past: "bought", pp: "bought", trans: "خریدن[span_70](start_span)[span_70](end_span)"},
+            {base: "write", past: "wrote", pp: "written", trans: "نوشتن[span_71](start_span)[span_71](end_span)"}
+        ];
 
-        function saveData() {
-            localStorage.setItem('english_9th_data', JSON.stringify(appData));
+        let db = JSON.parse(localStorage.getItem('english_9th_db_v2')) || initialDatabase;
+
+        function saveLocalDB() {
+            localStorage.setItem('english_9th_db_v2', JSON.stringify(db));
         }
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
-            
-            if(tabId === 'lessons') {
-                document.getElementById('lessons-tab').classList.remove('hidden');
-                event.target.classList.add('active');
-                renderLessons();
-            } else if(tabId === 'exam') {
-                document.getElementById('exam-tab').classList.remove('hidden');
-                event.target.classList.add('active');
-            } else if(tabId === 'admin') {
-                document.getElementById('admin-tab').classList.remove('hidden');
-                event.target.classList.add('active');
-            }
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
         }
 
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+            if(tabId === 'flashcards') setupFlashcard();
+        }
+
+        // رندر کردن دروس
         function renderLessons() {
-            const container = document.getElementById('lessons-container');
+            const container = document.getElementById('lessonsContainer');
             container.innerHTML = '';
-            appData.forEach((lesson, index) => {
-                let vocabRows = lesson.vocab.map(v => `
+            db.forEach(lesson => {
+                let rows = lesson.vocab.map(v => `
                     <tr>
-                        <td><b>${v.word}</b></td>
+                        <td><b>${v.word}</b> <button style="border:none; background:none; cursor:pointer" onclick="speakText('${v.word}')">🔊</button></td>
                         <td>${v.trans}</td>
                         <td>${v.syn}</td>
                         <td>${v.ant}</td>
+                        <td><i>${v.ex}</i></td>
                     </tr>
                 `).join('');
 
                 container.innerHTML += `
-                    <div class="lesson-card">
-                        <h3>${lesson.title}</h3>
-                        <p><b>نکته گرامری کلیدی:</b> ${lesson.grammar}</p>
+                    <div class="card lesson-item">
+                        <h2>درس ${lesson.number}: ${lesson.title}</h2>
+                        <p><strong>💡 نکته گرامری:</strong> ${lesson.grammar}</p>
                         <table>
-                            <tr>
-                                <th>کلمه</th>
-                                <th>معنی فارسی</th>
-                                <th>مترادف</th>
-                                <th>متضاد</th>
-                            </tr>
-                            ${vocabRows}
+                            <thead>
+                                <tr>
+                                    <th>واژه انگلیسی</th>
+                                    <th>معنی فارسی</th>
+                                    <th>مترادف</th>
+                                    <th>متضاد</th>
+                                    <th>مثال کاربردی</th>
+                                </tr>
+                            </thead>
+                            <tbody>${rows}</tbody>
                         </table>
                     </div>
                 `;
             });
         }
 
-        function addNewVocabulary() {
-            const lessonIndex = document.getElementById('admin-lesson-select').value;
-            const word = document.getElementById('new-word').value;
-            const trans = document.getElementById('new-trans').value;
-            const syn = document.getElementById('new-syn').value;
-            const ant = document.getElementById('new-ant').value;
-
-            if(!word || !trans) {
-                alert('لطفاً حداقل کلمه و معنی را وارد کنید!');
-                return;
-            }
-
-            appData[lessonIndex].vocab.push({word, trans, syn: syn || '-', ant: ant || '-'});
-            saveData();
-            alert('واژه جدید با موفقیت به سیستم اضافه شد و در پایگاه داده ذخیره گشت!');
-            document.getElementById('new-word').value = '';
-            document.getElementById('new-trans').value = '';
-            document.getElementById('new-syn').value = '';
-            document.getElementById('new-ant').value = '';
+        function filterLessons() {
+            let query = document.getElementById('lessonSearch').value.toLowerCase();
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                let text = item.innerText.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
         }
 
-        function resetData() {
-            if(confirm('آیا مطمئن هستید که می‌خواهید اطلاعات را به حالت اولیه بازنشانی کنید؟')) {
-                localStorage.removeItem('english_9th_data');
-                appData = defaultData;
+        // سیستم افعال بی‌قاعده
+        function renderVerbs() {
+            const tbody = document.getElementById('verbsTableBody');
+            tbody.innerHTML = irregularVerbsData.map(v => `
+                <tr>
+                    <td><b>${v.base}</b></td>
+                    <td>${v.past}</td>
+                    <td>${v.pp}</td>
+                    <td>${v.trans}</td>
+                </tr>
+            `).join('');
+        }
+
+        function filterVerbs() {
+            let query = document.getElementById('verbSearch').value.toLowerCase();
+            let rows = document.querySelectorAll('#verbsTableBody tr');
+            rows.forEach(r => r.style.display = r.innerText.toLowerCase().includes(query) ? '' : 'none');
+        }
+
+        // سیستم فلش‌کارت
+        let allWords = [];
+        let currentCardIndex = 0;
+        let isFlipped = false;
+
+        function setupFlashcard() {
+            allWords = [];
+            db.forEach(l => l.vocab.forEach(v => allWords.push(v)));
+            currentCardIndex = 0;
+            showCard();
+        }
+
+        function showCard() {
+            isFlipped = false;
+            const card = document.getElementById('cardText');
+            if(allWords.length > 0) {
+                card.innerText = allWords[currentCardIndex].word;
+            }
+        }
+
+        function flipCard() {
+            const card = document.getElementById('cardText');
+            if(!isFlipped) {
+                card.innerHTML = `<span style="color:var(--accent)">${allWords[currentCardIndex].trans}</span><br><small>مترادف: ${allWords[currentCardIndex].syn}</small>`;
+                isFlipped = true;
+            } else {
+                card.innerText = allWords[currentCardIndex].word;
+                isFlipped = false;
+            }
+        }
+
+        function nextCard() {
+            if(currentCardIndex < allWords.length - 1) currentCardIndex++;
+            else currentCardIndex = 0;
+            showCard();
+        }
+
+        function prevCard() {
+            if(currentCardIndex > 0) currentCardIndex--;
+            else currentCardIndex = allWords.length - 1;
+            showCard();
+        }
+
+        function speakWord() {
+            speakText(allWords[currentCardIndex].word);
+        }
+
+        function speakText(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // پنل مدیریت
+        function addVocabularyAdmin() {
+            let lIdx = document.getElementById('adminLessonIndex').value;
+            let word = document.getElementById('addWord').value;
+            let trans = document.getElementById('addTrans').value;
+            let syn = document.getElementById('addSyn').value || '-';
+            let ant = document.getElementById('addAnt').value || '-';
+
+            if(!word || !trans) { alert('لطفاً واژه و معنی آن را وارد کنید!'); return; }
+
+            db[lIdx].vocab.push({word, trans, syn, ant, ex: `${word} is a word.`});
+            saveLocalDB();
+            renderLessons();
+            alert('واژه با موفقیت به پایگاه داده اضافه شد!');
+            document.getElementById('addWord').value = '';
+            document.getElementById('addTrans').value = '';
+        }
+
+        function resetDatabase() {
+            if(confirm('آیا مایلید تمام تغییرات حذف و داده‌ها به حالت اولیه بازگردند؟')) {
+                localStorage.removeItem('english_9th_db_v2');
+                db = initialDatabase;
                 renderLessons();
-                alert('اطلاعات با موفقیت بازنشانی شد.');
+                alert('دیتابیس با موفقیت بازنشانی شد.');
             }
         }
 
-        function startExam() {
-            const container = document.getElementById('exam-questions');
-            container.innerHTML = `
-                <div style="background:#f8fafc; padding:15px; border-radius:8px;">
-                    <p><b>۱. معنی کلمه Shy چیست؟</b></p>
-                    <label><input type="radio" name="q1" value="b"> الف) شجاع</label><br>
-                    <label><input type="radio" name="q1" value="a"> ب) خجالتی</label><br>
-                    
-                    <p><b>۲. جای خالی را کامل کنید: My friends ... very kind.</b></p>
-                    <label><input type="radio" name="q2" value="a"> الف) are</label><br>
-                    <label><input type="radio" name="q2" value="b"> ب) is</label><br>
+        // بخش آزمون جامع
+        const examQuestionsData = [
+            {q: "۱. معنی واژه shy کدام است؟[span_72](start_span)[span_72](end_span)", options: ["الف) شجاع", "ب) خجالتی", "ج) صبور"], correct: 1},
+            {q: "۲. معنی receptionist چیست؟[span_73](start_span)[span_73](end_span)", options: ["الف) پذیرشگر", "ب) مسافر", "ج) راننده"], correct: 0},
+            {q: "۳. متضاد کلمه polite کدام است؟[span_74](start_span)[span_74](end_span)", options: ["الف) kind", "ب) rude", "ج) helpful"], correct: 1},
+            {q: "۴. معنی fireworks چیست؟[span_75](start_span)[span_75](end_span)", options: ["الف) هدیه", "ب) آتش بازی", "ج) روزنامه"], correct: 1},
+            {q: "۵. شکل مناسب: My friends ... very kind.[span_76](start_span)[span_76](end_span)", options: ["الف) am", "ب) is", "ج) are"], correct: 2},
+            {q: "۶. شکل مناسب: Did Sara (go / went) to school yesterday?[span_77](start_span)[span_77](end_span)", options: ["الف) go", "ب) went"], correct: 0}
+        ];
 
-                    <p><b>۳. کدام گزینه متضاد کلمه polite است؟</b></p>
-                    <label><input type="radio" name="q3" value="a"> الف) rude</label><br>
-                    <label><input type="radio" name="q3" value="b"> ب) kind</label><br>
-
-                    <br>
-                    <button class="btn" onclick="checkExam()">ثبت و دریافت نمره و پاسخ‌نامه</button>
-                    <div id="exam-result" style="margin-top:15px; font-weight:bold;"></div>
+        function loadExamQuestions() {
+            const form = document.getElementById('examForm');
+            form.innerHTML = examQuestionsData.map((q, idx) => `
+                <div style="margin-bottom:15px;">
+                    <p><b>${q.q}</b></p>
+                    ${q.options.map((opt, oIdx) => `
+                        <label><input type="radio" name="q${idx}" value="${oIdx}"> ${opt}</label><br>
+                    `).join('')}
                 </div>
-            `;
+            `).join('') + `<button type="button" class="btn btn-success" onclick="evaluateExam()">ارسال و دریافت نمره و پاسخ‌نامه</button>`;
+            document.getElementById('examResult').style.display = 'none';
         }
 
-        function checkExam() {
+        function evaluateExam() {
             let score = 0;
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
-            const q3 = document.querySelector('input[name="q3"]:checked');
+            examQuestionsData.forEach((q, idx) => {
+                let selected = document.querySelector(`input[name="q${idx}"]:checked`);
+                if(selected && parseInt(selected.value) === q.correct) score++;
+            });
 
-            if(q1 && q1.value === 'a') score++;
-            if(q2 && q2.value === 'a') score++;
-            if(q3 && q3.value === 'a') score++;
-
-            document.getElementById('exam-result').innerHTML = `
-                نمره شما: ${score} از ۳<br>
-                <span style="color: var(--primary-color);">پاسخ‌نامه تشریحی: سوال ۱ (گزینه ب - خجالتی)، سوال ۲ (گزینه الف - are چون جمع است)، سوال ۳ (گزینه الف - rude متضاد مودب است[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span)).</span>
+            const resDiv = document.getElementById('examResult');
+            resDiv.style.display = 'block';
+            resDiv.innerHTML = `
+                <h3>نتیجه آزمون:</h3>
+                <p>نمره شما: <b>${score} از ${examQuestionsData.length}</b></p>
+                <hr>
+                <h4>پاسخ‌نامه تشریحی:</h4>
+                <ul>
+                    <li>سوال ۱: گزینه ب (خجالتی)[span_78](start_span)[span_78](end_span)</li>
+                    <li>سوال ۲: گزینه الف (پذیرشگر)[span_79](start_span)[span_79](end_span)</li>
+                    <li>سوال ۳: گزینه ب (rude متضاد polite است)[span_80](start_span)[span_80](end_span)[span_81](start_span)[span_81](end_span)</li>
+                    <li>سوال ۴: گزینه ب (آتش‌بازی)[span_82](start_span)[span_82](end_span)</li>
+                    <li>سوال ۵: گزینه ج (are چون فاعل friends جمع است)[span_83](start_span)[span_83](end_span)</li>
+                    <li>سوال ۶: گزینه الف (بعد از did فعل ساده می‌آید)[span_84](start_span)[span_84](end_span)[span_85](start_span)[span_85](end_span)</li>
+                </ul>
             `;
         }
 
-        // بارگذاری اولیه دروس
+        // بارگذاری اولیه
         renderLessons();
+        renderVerbs();
     </script>
 </body>
 </html>
