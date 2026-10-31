@@ -1,401 +1,421 @@
 {
-  "grade": "9th",
-  "subject": "English (Prospect 3)",
-  "edition": "1405",
-  "total_lessons": 6,
+  "book_info": {
+    "title": "راهنمای جامع زبان انگلیسی پایه نهم (Prospect 3)",
+    "edition": "1405",
+    "grade": "9th",
+    "description": "منبع آموزشی مکمل شامل واژگان، گرامر، مکالمه و آزمون جامع"
+  },
+  "study_guide": {
+    "steps": [
+      "(۱) ابتدا واژگان هر درس را با صدای بلند بخوانید.",
+      "(۲) مثال انگلیسی را بپوشانید و معنی آن را به یاد بیاورید.",
+      "(۳) قاعده را همراه با مثال تمرین کنید.",
+      "(۴) مکالمه نمونه را با یک هم‌کلاسی اجرا کنید.",
+      "(۵) تمرین‌ها را بدون نگاه کردن به پاسخ‌نامه حل کنید."
+    ],
+    "weekly_plan": [
+      { "day": "روز اول", "task": "درس ۱ و واژگان شخصیت + تمرین be" },
+      { "day": "روز دوم", "task": "درس ۲ و حال استمراری + مالکیت" },
+      { "day": "روز سوم", "task": "درس ۳ و حال ساده + do/does" },
+      { "day": "روز چهارم", "task": "درس ۴ و پرسش‌های WH + قیدهای تکرار" },
+      { "day": "روز پنجم", "task": "درس ۵ و گذشته ساده باقاعده + was/were" },
+      { "day": "روز ششم", "task": "درس ۶ و افعال بی‌قاعده + ضمایر مفعولی" },
+      { "day": "روز هفتم", "task": "مرور افعال بی‌قاعده و حل آزمون جامع بدون نگاه به پاسخ‌نامه" }
+    ]
+  },
   "lessons": [
     {
       "lesson_number": 1,
       "title": "Personality",
+      "persian_title": "شخصیت",
+      "objective": "توصیف ویژگی‌های اخلاقی و پرسیدن درباره شخصیت افراد. قاعده محوری: فعل be در زمان حال ساده.",
       "vocabulary": [
+        { "word": "shy", "translation": "خجالتی", "synonyms": ["cowardly"], "antonyms": ["brave"], "part_of_speech": "Adjective", "example": "My brother is shy.", "example_persian": "برادرم خجالتی است." },
+        { "word": "brave", "translation": "شجاع", "synonyms": ["courageous"], "antonyms": ["afraid", "shy"], "part_of_speech": "Adjective", "example": "The brave girl helps others.", "example_persian": "دختر شجاع به دیگران کمک می‌کند." },
+        { "word": "hard-working", "translation": "سخت‌کوش", "synonyms": ["diligent"], "antonyms": ["lazy"], "part_of_speech": "Adjective", "example": "Our teacher is hard-working.", "example_persian": "معلم ما سخت‌کوش است." },
+        { "word": "kind", "translation": "مهربان", "synonyms": ["friendly"], "antonyms": ["unkind", "rude"], "part_of_speech": "Adjective", "example": "She is kind to children.", "example_persian": "او با بچه‌ها مهربان است." },
+        { "word": "patient", "translation": "صبور", "synonyms": ["calm"], "antonyms": ["impatient"], "part_of_speech": "Adjective", "example": "Be patient, please.", "example_persian": "لطفاً صبور باش." },
+        { "word": "polite", "translation": "مؤدب", "synonyms": ["courteous"], "antonyms": ["rude"], "part_of_speech": "Adjective", "example": "He is always polite.", "example_persian": "او همیشه مؤدب است." },
+        { "word": "careful", "translation": "مراقب، با دقت", "synonyms": ["cautious"], "antonyms": ["careless"], "part_of_speech": "Adjective", "example": "Be careful!", "example_persian": "مواظب باش!" },
+        { "word": "lazy", "translation": "تنبل", "synonyms": ["idle"], "antonyms": ["hard-working", "active"], "part_of_speech": "Adjective", "example": "I am not lazy.", "example_persian": "من تنبل نیستم." },
+        { "word": "funny", "translation": "بامزه، خنده‌دار", "synonyms": ["amusing"], "antonyms": ["serious"], "part_of_speech": "Adjective", "example": "Your friend is funny.", "example_persian": "دوستت بامزه است." },
+        { "word": "angry", "translation": "عصبانی", "synonyms": ["mad"], "antonyms": ["calm"], "part_of_speech": "Adjective", "example": "Why are you angry?", "example_persian": "چرا عصبانی هستی؟" },
+        { "word": "clever", "translation": "باهوش", "synonyms": ["smart", "intelligent"], "antonyms": ["foolish"], "part_of_speech": "Adjective", "example": "The clever student answers quickly.", "example_persian": "دانش‌آموز باهوش سریع جواب می‌دهد." },
+        { "word": "friendly", "translation": "دوستانه، خوش‌برخورد", "synonyms": ["kind"], "antonyms": ["unkind"], "part_of_speech": "Adjective", "example": "They are friendly.", "example_persian": "آن‌ها خوش‌برخوردند." },
+        { "word": "quiet", "translation": "آرام، کم‌حرف", "synonyms": ["silent"], "antonyms": ["talkative", "noisy"], "part_of_speech": "Adjective", "example": "My sister is quiet.", "example_persian": "خواهرم کم‌حرف است." },
+        { "word": "honest", "translation": "صادق", "synonyms": ["truthful"], "antonyms": ["dishonest"], "part_of_speech": "Adjective", "example": "An honest person tells the truth.", "example_persian": "فرد صادق حقیقت را می‌گوید." },
+        { "word": "helpful", "translation": "کمک‌کننده، مفید", "synonyms": ["useful"], "antonyms": ["unhelpful"], "part_of_speech": "Adjective", "example": "He is helpful at home.", "example_persian": "او در خانه کمک‌حال است." }
+      ],
+      "grammar": [
         {
-          "word": "Clever",
-          "translation": "باهوش، بااستعداد",
-          "synonyms": ["Smart", "Intelligent"],
-          "antonyms": ["Stupid", "Foolish"],
-          "part_of_speech": "Adjective",
-          "example": "He is a very clever student."
+          "topic": "ساختار مثبت زمان حال ساده با be",
+          "formula": "فاعل + am / is / are + صفت / اسم",
+          "explanation": "انتخاب فعل be: برای I از am، برای he/she/it از is و برای you/we/they از are استفاده می‌شود.",
+          "examples": ["I am kind.", "She is clever.", "They are friendly."]
         },
         {
-          "word": "Kind",
-          "translation": "مهربان",
-          "synonyms": ["Caring", "Friendly"],
-          "antonyms": ["Cruel", "Unkind"],
-          "part_of_speech": "Adjective",
-          "example": "She is always kind to everyone."
+          "topic": "ساختار منفی",
+          "formula": "فاعل + am not / is not / are not + صفت / اسم",
+          "explanation": "شکل کوتاه: isn't و aren't.",
+          "examples": ["He isn't lazy. (او تنبل نیست.)"]
         },
         {
-          "word": "Hard-working",
-          "translation": "سخت‌کوش، پرکار",
-          "synonyms": ["Diligent", "Industrious"],
-          "antonyms": ["Lazy"],
-          "part_of_speech": "Adjective",
-          "example": "My father is a hard-working man."
-        },
-        {
-          "word": "Lazy",
-          "translation": "تنبل",
-          "synonyms": ["Idle"],
-          "antonyms": ["Hard-working", "Active"],
-          "part_of_speech": "Adjective",
-          "example": "Don't be lazy! Do your homework."
-        },
-        {
-          "word": "Polite",
-          "translation": "باادب، مؤدب",
-          "synonyms": ["Courteous", "Mannerly"],
-          "antonyms": ["Impolite", "Rude"],
-          "part_of_speech": "Adjective",
-          "example": "He is a polite boy."
-        },
-        {
-          "word": "Rude",
-          "translation": "بی‌ادب، گستاخ",
-          "synonyms": ["Impolite"],
-          "antonyms": ["Polite"],
-          "part_of_speech": "Adjective",
-          "example": "It is rude to interrupt others."
-        },
-        {
-          "word": "Quiet",
-          "translation": "ساکت، آرام",
-          "synonyms": ["Silent", "Calm"],
-          "antonyms": ["Noisy", "Talkative"],
-          "part_of_speech": "Adjective",
-          "example": "Please be quiet in the library."
-        },
-        {
-          "word": "Careful",
-          "translation": "مواظب، بااحتیاط",
-          "synonyms": ["Cautious"],
-          "antonyms": ["Careless"],
-          "part_of_speech": "Adjective",
-          "example": "Be careful when driving."
+          "topic": "پرسش درباره شخصیت",
+          "formula": "What + is/are + فاعل + like?",
+          "explanation": "این پرسش درباره اخلاق و ویژگی‌های شخصیتی است، نه ظاهر.",
+          "examples": ["What is your new classmate like? -> He is friendly and hard-working."]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Conversation",
-          "lines": [
-            {
-              "english": "Is your uncle quiet?",
-              "persian": "آیا عموی شما ساکت است؟",
-              "exam_tip": "پرسش با فعل to be (Is) برای صفت‌ها."
-            },
-            {
-              "english": "No, he is very talkative.",
-              "persian": "خیر، او بسیار پرحرف است.",
-              "exam_tip": "استفاده از قید قوی‌کننده very قبل از صفت."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "What is your new classmate like?", "persian": "هم‌کلاسی جدیدت چطور آدمی است؟" },
+        { "speaker": "B", "english": "He is friendly and hard-working.", "persian": "او خوش‌برخورد و سخت‌کوش است." },
+        { "speaker": "A", "english": "Is he shy?", "persian": "آیا او خجالتی است؟" },
+        { "speaker": "B", "english": "No, he isn't. He is very polite.", "persian": "خیر، نیست. او بسیار مؤدب است." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "To Be Verbs with Personality Adjectives",
-          "explanation": "برای توصیف شخصیت افراد از افعال to be (am, is, are) به همراه صفت استفاده می‌شود.",
-          "formula": "Subject + am/is/are + Adjective",
-          "examples": [
-            {
-              "english": "He is very patient.",
-              "persian": "او بسیار صبور است."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "A good friend is kind, honest and helpful. A good friend listens to others and is patient. A shy person may speak less, but he or she can be a very good friend.",
+        "text_persian": "یک دوست خوب مهربان، صادق و کمک‌کننده است. دوست خوب به دیگران گوش می‌دهد و صبور است. فرد خجالتی ممکن است کمتر صحبت کند اما او نیز می‌تواند دوست بسیار خوبی باشد."
+      }
     },
     {
       "lesson_number": 2,
       "title": "Travel",
+      "persian_title": "سفر",
+      "objective": "صحبت درباره سفر و کارهایی که همین حالا در جریان‌اند. دستور اصلی: حال استمراری و مالکیت با s' و of.",
       "vocabulary": [
+        { "word": "travel", "translation": "سفر کردن، سفر", "synonyms": ["journey"], "antonyms": ["stay"], "part_of_speech": "Verb / Noun", "example": "We travel in summer.", "example_persian": "تابستان سفر می‌کنیم." },
+        { "word": "ticket", "translation": "بلیت", "synonyms": ["pass"], "antonyms": [], "part_of_speech": "Noun", "example": "I have a bus ticket.", "example_persian": "من بلیت اتوبوس دارم." },
+        { "word": "passport", "translation": "گذرنامه", "synonyms": ["travel document"], "antonyms": [], "part_of_speech": "Noun", "example": "Where is your passport?", "example_persian": "گذرنامه‌ات کجاست؟" },
+        { "word": "airport", "translation": "فرودگاه", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "They are at the airport.", "example_persian": "آن‌ها در فرودگاه هستند." },
+        { "word": "station", "translation": "ایستگاه", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The train station is near here.", "example_persian": "ایستگاه قطار نزدیک اینجاست." },
+        { "word": "receptionist", "translation": "پذیرشگر", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The receptionist is helpful.", "example_persian": "پذیرشگر کمک‌کننده است." },
+        { "word": "hotel", "translation": "هتل", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "We are staying at a hotel.", "example_persian": "ما در هتل اقامت داریم." },
+        { "word": "reservation", "translation": "رزرو", "synonyms": ["booking"], "antonyms": ["cancellation"], "part_of_speech": "Noun", "example": "I have a hotel reservation.", "example_persian": "من رزرو هتل دارم." },
+        { "word": "luggage", "translation": "بار و چمدان", "synonyms": ["baggage"], "antonyms": [], "part_of_speech": "Noun", "example": "My luggage is heavy.", "example_persian": "بار من سنگین است." },
+        { "word": "suitcase", "translation": "چمدان", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "This suitcase is mine.", "example_persian": "این چمدان مال من است." },
+        { "word": "fill out", "translation": "پر کردن (فرم)", "synonyms": ["complete"], "antonyms": [], "part_of_speech": "Verb", "example": "Please fill out this form.", "example_persian": "لطفاً این فرم را پر کنید." },
+        { "word": "check in", "translation": "پذیرش / ثبت ورود", "synonyms": [], "antonyms": ["check out"], "part_of_speech": "Verb", "example": "We check in at the hotel.", "example_persian": "در هتل پذیرش می‌شویم." },
+        { "word": "visit", "translation": "بازدید کردن، دیدن", "synonyms": [], "antonyms": [], "part_of_speech": "Verb", "example": "Are you visiting Shiraz?", "example_persian": "آیا از شیراز دیدن می‌کنی؟" },
+        { "word": "map", "translation": "نقشه", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "Look at the map.", "example_persian": "به نقشه نگاه کن." },
+        { "word": "journey", "translation": "سفر، مسیر", "synonyms": ["trip"], "antonyms": [], "part_of_speech": "Noun", "example": "The journey is long.", "example_persian": "سفر طولانی است." },
+        { "word": "single/double room", "translation": "اتاق یک‌نفره / دونفره", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "We need a double room.", "example_persian": "یک اتاق دونفره لازم داریم." }
+      ],
+      "grammar": [
         {
-          "word": "Travel",
-          "translation": "سفر کردن، مسافرت",
-          "synonyms": ["Journey", "Trip"],
-          "antonyms": ["Stay"],
-          "part_of_speech": "Verb / Noun",
-          "example": "We love to travel in summer."
+          "topic": "ساختار حال استمراری",
+          "formula": "فاعل + am / is / are + فعل ing‌دار",
+          "explanation": "برای کارهایی که اکنون یا در همین بازه زمانی در جریان است.",
+          "examples": ["I am reading. (من در حال مطالعه‌ام)", "She is staying at a hotel this week."]
         },
         {
-          "word": "Ticket",
-          "translation": "بلیط",
-          "synonyms": ["Pass"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "I bought a plane ticket."
+          "topic": "قواعد افزودن ing",
+          "formula": "فعل + ing",
+          "explanation": "فعل پایان‌یافته به e -> حذف e و افزودن ing (write -> writing). الگوی کوتاه یک‌هجایی همخوان-مصوت-همخوان -> دوبرابر شدن حرف پایانی (sit -> sitting).",
+          "examples": ["work -> working", "write -> writing", "sit -> sitting"]
         },
         {
-          "word": "Hotel",
-          "translation": "هتل، مسافرخانه",
-          "synonyms": ["Inn"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "They stayed at a beautiful hotel."
-        },
-        {
-          "word": "Passport",
-          "translation": "گذرنامه، پاسپورت",
-          "synonyms": ["Travel document"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "Don't forget your passport!"
+          "topic": "مالکیت با s' و of",
+          "formula": "مالکیت انسان/حیوان: s' | مالکیت اشیاء: of",
+          "explanation": "برای انسان و حیوان از s' (مثل Sara's bag) و برای اشیاء و رابطه جزء و کل از of (مثل the door of the room) استفاده می‌شود.",
+          "examples": ["Sara's bag = کیف سارا", "the door of the room = درِ اتاق"]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Conversation",
-          "lines": [
-            {
-              "english": "Are you buying a ticket?",
-              "persian": "آیا داری بلیط می‌خری؟",
-              "exam_tip": "زمان حال استمراری (Present Continuous) برای کار در حال انجام."
-            },
-            {
-              "english": "Yes, I am booking a room online too.",
-              "persian": "بله، من همچنین دارم یک اتاق آنلاین رزرو می‌کنم.",
-              "exam_tip": "کاربرد فعل book به معنای رزرو کردن."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "Are you visiting Tabriz this week?", "persian": "آیا این هفته از تبریز دیدن می‌کنی؟" },
+        { "speaker": "B", "english": "Yes, I am. I'm staying at a hotel.", "persian": "بله. در یک هتل اقامت دارم." },
+        { "speaker": "A", "english": "What are you doing now?", "persian": "الان داری چه کار می‌کنی؟" },
+        { "speaker": "B", "english": "I'm filling out a form at the reception.", "persian": "دارم در پذیرش یک فرم پر می‌کنم." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "Present Continuous Tense",
-          "explanation": "زمان حال استمراری برای بیان کارهایی که همین الان در حال رخ دادن هستند.",
-          "formula": "Subject + am/is/are + Verb-ing",
-          "examples": [
-            {
-              "english": "She is packing her bags.",
-              "persian": "او دارد چمدان‌هایش را می‌بندد."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "A family is at the airport. The father is carrying two suitcases. The children are looking at the departure board. Their mother is talking to a receptionist.",
+        "text_persian": "یک خانواده در فرودگاه است. پدر دو چمدان حمل می‌کند. بچه‌ها به تابلوی حرکت پروازها نگاه می‌کنند. مادرشان با پذیرشگر صحبت می‌کند."
+      }
     },
     {
       "lesson_number": 3,
       "title": "Festivals and Ceremonies",
+      "persian_title": "جشن‌ها و مراسم",
+      "objective": "صحبت درباره عادت‌ها، جشن‌ها و کارهای همیشگی. دستور اصلی: حال ساده با do و does و ضمایر ملکی.",
       "vocabulary": [
+        { "word": "festival", "translation": "جشنواره، فستیوال", "synonyms": ["event"], "antonyms": [], "part_of_speech": "Noun", "example": "The city has a music festival.", "example_persian": "شهر جشنواره موسیقی دارد." },
+        { "word": "ceremony", "translation": "مراسم", "synonyms": ["ritual"], "antonyms": [], "part_of_speech": "Noun", "example": "The ceremony starts at noon.", "example_persian": "مراسم ظهر شروع می‌شود." },
+        { "word": "celebrate", "translation": "جشن گرفتن", "synonyms": ["observe"], "antonyms": ["mourn"], "part_of_speech": "Verb", "example": "We celebrate Nowruz.", "example_persian": "نوروز را جشن می‌گیریم." },
+        { "word": "fireworks", "translation": "آتش‌بازی", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "People watch fireworks.", "example_persian": "مردم آتش‌بازی تماشا می‌کنند." },
+        { "word": "national anthem", "translation": "سرود ملی", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "They sing the national anthem.", "example_persian": "آن‌ها سرود ملی را می‌خوانند." },
+        { "word": "New Year", "translation": "سال نو", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "Happy New Year!", "example_persian": "سال نو مبارک!" },
+        { "word": "traditional", "translation": "سنتی", "synonyms": ["conventional"], "antonyms": ["modern"], "part_of_speech": "Adjective", "example": "This is a traditional food.", "example_persian": "این یک غذای سنتی است." },
+        { "word": "gift", "translation": "هدیه", "synonyms": ["present"], "antonyms": [], "part_of_speech": "Noun", "example": "I buy a gift for my mother.", "example_persian": "برای مادرم هدیه می‌خرم." },
+        { "word": "decorate", "translation": "تزئین کردن", "synonyms": ["adorn"], "antonyms": [], "part_of_speech": "Verb", "example": "We decorate the room.", "example_persian": "اتاق را تزئین می‌کنیم." },
+        { "word": "invite", "translation": "دعوت کردن", "synonyms": [], "antonyms": [], "part_of_speech": "Verb", "example": "They invite their friends.", "example_persian": "آن‌ها دوستانشان را دعوت می‌کنند." },
+        { "word": "usually", "translation": "معمولاً", "synonyms": ["normally"], "antonyms": ["rarely"], "part_of_speech": "Adverb", "example": "We usually visit our grandparents.", "example_persian": "معمولاً به دیدن پدربزرگ و مادربزرگ می‌رویم." },
+        { "word": "sometimes", "translation": "گاهی", "synonyms": ["occasionally"], "antonyms": ["always"], "part_of_speech": "Adverb", "example": "She sometimes wears traditional clothes.", "example_persian": "او گاهی لباس سنتی می‌پوشد." },
+        { "word": "at the turn of the year", "translation": "هنگام تحویل سال", "synonyms": [], "antonyms": [], "part_of_speech": "Phrase", "example": "We are together at the turn of the year.", "example_persian": "هنگام تحویل سال کنار هم هستیم." },
+        { "word": "recite", "translation": "قرائت کردن، از حفظ خواندن", "synonyms": ["read aloud"], "antonyms": [], "part_of_speech": "Verb", "example": "He recites a poem.", "example_persian": "او شعری را می‌خواند." },
+        { "word": "color", "translation": "رنگ کردن", "synonyms": ["paint"], "antonyms": [], "part_of_speech": "Verb", "example": "Children color the eggs.", "example_persian": "بچه‌ها تخم‌مرغ‌ها را رنگ می‌کنند." }
+      ],
+      "grammar": [
         {
-          "word": "Celebrate",
-          "translation": "جشن گرفتن",
-          "synonyms": ["Observe", "Commemorate"],
-          "antonyms": ["Mourn"],
-          "part_of_speech": "Verb",
-          "example": "We celebrate Norooz every year."
+          "topic": "زمان حال ساده برای عادت‌ها",
+          "formula": "فاعل + شکل ساده فعل (افزودن s/es برای he/she/it)",
+          "explanation": "برای سوم‌شخص مفرد (he/she/it) به فعل s یا es اضافه می‌شود (plays, watches, studies).",
+          "examples": ["I visit my aunt every Friday.", "He bakes special cakes."]
         },
         {
-          "word": "Fireworks",
-          "translation": "آتش‌بازی",
-          "synonyms": ["Pyrotechnics"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "The fireworks were amazing."
+          "topic": "منفی و سؤالی در حال ساده",
+          "formula": "منفی: don't/doesn't + فعل ساده | سؤالی: Do/Does + فاعل + فعل ساده؟",
+          "explanation": "بعد از does و doesn't فعل اصلی همیشه به شکل ساده می‌آید و s نمی‌گیرد.",
+          "examples": ["They don't buy fireworks.", "He doesn't decorate the house.", "Do you celebrate Nowruz?"]
         },
         {
-          "word": "National",
-          "translation": "ملی",
-          "synonyms": ["State", "Countrywide"],
-          "antonyms": ["International", "Local"],
-          "part_of_speech": "Adjective",
-          "example": "It is a national holiday."
+          "topic": "صفات ملکی",
+          "formula": "my, your, his, her, its, our, their + اسم",
+          "explanation": "پیش از اسم می‌آیند و مالکیت را نشان می‌دهند.",
+          "examples": ["This is our house. (این خانه ماست)"]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Reading",
-          "lines": [
-            {
-              "english": "People wear special clothes on New Year.",
-              "persian": "مردم در عید نوروز لباس‌های خاص می‌پوشند.",
-              "exam_tip": "حرف اضافه on برای روزها و مناسبت‌ها."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "Do you buy new clothes for Nowruz?", "persian": "آیا برای نوروز لباس نو می‌خری؟" },
+        { "speaker": "B", "english": "Yes, I do. We usually visit our grandparents too.", "persian": "بله. معمولاً به دیدن پدربزرگ و مادربزرگمان هم می‌رویم." },
+        { "speaker": "A", "english": "Does your brother help decorate the house?", "persian": "آیا برادرت در تزئین خانه کمک می‌کند؟" },
+        { "speaker": "B", "english": "Yes, he does.", "persian": "بله، کمک می‌کند." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "Simple Present Tense (Habits & Routines)",
-          "explanation": "استفاده از زمان حال ساده برای بیان رسومات و عادت‌های همیشگی.",
-          "formula": "Subject + Base Verb (s/es for 3rd person)",
-          "examples": [
-            {
-              "english": "He bakes special cakes for Eid.",
-              "persian": "او برای عید کیک‌های مخصوص می‌پزد."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "Many families celebrate Nowruz. They clean their homes, prepare traditional food and visit relatives. Children may receive gifts. Families often get together at the turn of the year.",
+        "text_persian": "بسیاری از خانواده‌ها نوروز را جشن می‌گیرند. آن‌ها خانه‌هایشان را تمیز می‌کنند، غذای سنتی آماده می‌کنند و به دیدن خویشاوندان می‌روند. بچه‌ها ممکن است هدیه بگیرند. خانواده‌ها اغلب هنگام تحویل سال دور هم جمع می‌شوند."
+      }
     },
     {
       "lesson_number": 4,
       "title": "Services",
+      "persian_title": "خدمات",
+      "objective": "صحبت درباره خدمات عمومی، شغل‌ها، ساعت کار و پرسیدن اطلاعات. دستور اصلی: پرسش‌های WH و قیدهای تکرار.",
       "vocabulary": [
+        { "word": "service", "translation": "خدمت، سرویس", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The bank offers a useful service.", "example_persian": "بانک خدمات مفیدی ارائه می‌دهد." },
+        { "word": "employee", "translation": "کارمند", "synonyms": ["worker"], "antonyms": ["employer"], "part_of_speech": "Noun", "example": "My aunt is an employee.", "example_persian": "عمه‌ام کارمند است." },
+        { "word": "emergency", "translation": "وضعیت اضطراری", "synonyms": ["crisis"], "antonyms": ["calm"], "part_of_speech": "Noun", "example": "Call for help in an emergency.", "example_persian": "در وضعیت اضطراری کمک بخواهید." },
+        { "word": "hire", "translation": "استخدام کردن، کرایه کردن", "synonyms": ["employ"], "antonyms": ["fire"], "part_of_speech": "Verb", "example": "They hire a new worker.", "example_persian": "آن‌ها کارگر جدید استخدام می‌کنند." },
+        { "word": "recharge", "translation": "شارژ کردن", "synonyms": [], "antonyms": [], "part_of_speech": "Verb", "example": "I need to recharge my phone.", "example_persian": "باید تلفنم را شارژ کنم." },
+        { "word": "post office", "translation": "اداره پست", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The post office is open.", "example_persian": "اداره پست باز است." },
+        { "word": "bank", "translation": "بانک", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "He works at a bank.", "example_persian": "او در بانک کار می‌کند." },
+        { "word": "fire station", "translation": "ایستگاه آتش‌نشانی", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The fire station is near the park.", "example_persian": "ایستگاه آتش‌نشانی نزدیک پارک است." },
+        { "word": "police station", "translation": "کلانتری", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The police station is on this street.", "example_persian": "کلانتری در این خیابان است." },
+        { "word": "address", "translation": "نشانی، آدرس", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "What's your home address?", "example_persian": "نشانی خانه‌ات چیست؟" },
+        { "word": "open", "translation": "باز بودن، باز کردن", "synonyms": [], "antonyms": ["close"], "part_of_speech": "Adjective / Verb", "example": "What time does it open?", "example_persian": "چه ساعتی باز می‌شود؟" },
+        { "word": "close", "translation": "بسته شدن، بستن", "synonyms": [], "antonyms": ["open"], "part_of_speech": "Verb", "example": "The shop closes at 9.", "example_persian": "مغازه ساعت ۹ بسته می‌شود." },
+        { "word": "customer", "translation": "مشتری", "synonyms": ["client"], "antonyms": [], "part_of_speech": "Noun", "example": "The customer needs help.", "example_persian": "مشتری به کمک نیاز دارد." },
+        { "word": "operator", "translation": "اپراتور", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The operator answers the phone.", "example_persian": "اپراتور به تلفن پاسخ می‌دهد." },
+        { "word": "available", "translation": "در دسترس، موجود", "synonyms": ["accessible"], "antonyms": ["unavailable"], "part_of_speech": "Adjective", "example": "Is the manager available?", "example_persian": "آیا مدیر در دسترس است؟" }
+      ],
+      "grammar": [
         {
-          "word": "Emergency",
-          "translation": "اورژانس، اضطراری",
-          "synonyms": ["Crisis"],
-          "antonyms": ["Calm"],
-          "part_of_speech": "Noun",
-          "example": "Call 115 in an emergency."
+          "topic": "ساختار کلمات پرسشی (WH Questions)",
+          "formula": "کلمه پرسشی + فعل کمکی (do/does/be) + فاعل + ادامه جمله؟",
+          "explanation": "کلمات پرسشی شامل: What (چه)، Where (کجا)، When (چه وقت)، Why (چرا)، Who (چه کسی)، What time (چه ساعتی)، How (چگونه).",
+          "examples": ["Where do you live?", "What time does the bank open? -> It opens at 8."]
         },
         {
-          "word": "Firefighter",
-          "translation": "آتش‌نشان",
-          "synonyms": ["Fireman"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "Firefighters save lives."
-        },
-        {
-          "word": "Donate",
-          "translation": "اهدا کردن",
-          "synonyms": ["Give", "Contribute"],
-          "antonyms": ["Keep", "Receive"],
-          "part_of_speech": "Verb",
-          "example": "They donate blood every year."
+          "topic": "قیدهای تکرار (Adverbs of Frequency)",
+          "formula": "همیشه: always | معمولاً: usually | اغلب: often | گاهی: sometimes | هرگز: never",
+          "explanation": "جای قید تکرار معمولاً قبل از فعل اصلی و بعد از فعل be قرار می‌گیرد.",
+          "examples": ["I usually walk. (قبل از فعل اصلی)", "She is always kind. (بعد از be)"]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Conversation",
-          "lines": [
-            {
-              "english": "What do you do in emergencies?",
-              "persian": "در موقعیت‌های اضطراری چه کار می‌کنید؟",
-              "exam_tip": "ساختار پرسشی زمان حال ساده با What do."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "Excuse me. What time does the post office open?", "persian": "ببخشید. اداره پست چه ساعتی باز می‌شود؟" },
+        { "speaker": "B", "english": "It opens at 8 in the morning.", "persian": "ساعت ۸ صبح باز می‌شود." },
+        { "speaker": "A", "english": "Where is it?", "persian": "کجاست؟" },
+        { "speaker": "B", "english": "It is next to the bank.", "persian": "کنار بانک است." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "Telling Time and Daily Services",
-          "explanation": "نحوه پرسیدن و بیان زمان و خدمات روزمره.",
-          "formula": "What time does... / What time is it?",
-          "examples": [
-            {
-              "english": "The bank opens at 8:00 AM.",
-              "persian": "بانک ساعت ۸ صبح باز می‌شود."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "Public services help people in a community. A post office sends letters and packages. A bank provides financial services. In an emergency, people should call the right service.",
+        "text_persian": "خدمات عمومی به مردم یک جامعه کمک می‌کنند. اداره پست نامه‌ها و بسته‌ها را ارسال می‌کند. بانک خدمات مالی ارائه می‌دهد. در وضعیت اضطراری، مردم باید با مرکز خدمات مناسب تماس بگیرند."
+      }
     },
     {
       "lesson_number": 5,
       "title": "Media",
+      "persian_title": "رسانه",
+      "objective": "صحبت درباره رسانه و رویدادهای گذشته. دستور اصلی: گذشته ساده افعال باقاعده و گذشته فعل be.",
       "vocabulary": [
+        { "word": "media", "translation": "رسانه‌ها", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "The media are important.", "example_persian": "رسانه‌ها مهم‌اند." },
+        { "word": "online", "translation": "آنلاین، برخط", "synonyms": [], "antonyms": ["offline"], "part_of_speech": "Adjective / Adverb", "example": "I read news online.", "example_persian": "خبرها را آنلاین می‌خوانم." },
+        { "word": "connect", "translation": "وصل کردن، ارتباط داشتن", "synonyms": ["link"], "antonyms": ["disconnect"], "part_of_speech": "Verb", "example": "The computer connects to the Internet.", "example_persian": "رایانه به اینترنت وصل می‌شود." },
+        { "word": "interview", "translation": "مصاحبه", "synonyms": [], "antonyms": [], "part_of_speech": "Noun / Verb", "example": "We watched an interview.", "example_persian": "یک مصاحبه تماشا کردیم." },
+        { "word": "report", "translation": "گزارش", "synonyms": [], "antonyms": [], "part_of_speech": "Noun / Verb", "example": "She wrote a report.", "example_persian": "او گزارشی نوشت." },
+        { "word": "newspaper", "translation": "روزنامه", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "My grandfather reads a newspaper.", "example_persian": "پدر بزرگم روزنامه می‌خواند." },
+        { "word": "radio", "translation": "رادیو", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "They listened to the radio.", "example_persian": "آن‌ها به رادیو گوش دادند." },
+        { "word": "website", "translation": "وب‌سایت", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "This website is useful.", "example_persian": "این وب‌سایت مفید است." },
+        { "word": "message", "translation": "پیام", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "I sent a message.", "example_persian": "پیامی فرستادم." },
+        { "word": "download", "translation": "بارگیری کردن", "synonyms": [], "antonyms": ["upload"], "part_of_speech": "Verb", "example": "He downloaded a file.", "example_persian": "او فایلی را بارگیری کرد." },
+        { "word": "attend", "translation": "شرکت کردن", "synonyms": ["participate"], "antonyms": [], "part_of_speech": "Verb", "example": "We attended a film festival.", "example_persian": "در جشنواره فیلم شرکت کردیم." },
+        { "word": "event", "translation": "رویداد، اتفاق", "synonyms": ["occasion"], "antonyms": [], "part_of_speech": "Noun", "example": "The event was exciting.", "example_persian": "رویداد هیجان‌انگیز بود." },
+        { "word": "international", "translation": "بین‌المللی", "synonyms": ["global"], "antonyms": ["national", "local"], "part_of_speech": "Adjective", "example": "It was an international event.", "example_persian": "رویدادی بین‌المللی بود." },
+        { "word": "wonderful", "translation": "عالی، شگفت‌انگیز", "synonyms": ["great", "amazing"], "antonyms": ["terrible"], "part_of_speech": "Adjective", "example": "We had a wonderful day.", "example_persian": "روز فوق‌العاده‌ای داشتیم." },
+        { "word": "last night", "translation": "دیشب", "synonyms": [], "antonyms": [], "part_of_speech": "Phrase", "example": "I watched a movie last night.", "example_persian": "دیشب فیلمی تماشا کردم." }
+      ],
+      "grammar": [
         {
-          "word": "News",
-          "translation": "اخبار",
-          "synonyms": ["Reports", "Information"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "I watch the news on TV."
+          "topic": "گذشته ساده افعال باقاعده",
+          "formula": "فاعل + فعل ed‌دار",
+          "explanation": "قواعد املایی ed: افعال مختوم به e فقط d می‌گیرند (live -> lived). افعال مختوم به همخوان+y -> y تبدیل به i می‌شود (study -> studied). افعال تک‌هجایی کوتاه حرف پایانی دوبرابر می‌شود (stop -> stopped).",
+          "examples": ["play -> played", "watch -> watched", "live -> lived", "study -> studied", "stop -> stopped"]
         },
         {
-          "word": "Internet",
-          "translation": "اینترنت",
-          "synonyms": ["Web", "Net"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "She surfs the internet daily."
+          "topic": "منفی و سؤالی گذشته با did",
+          "formula": "منفی: didn't + شکل ساده فعل | سؤالی: Did + فاعل + شکل ساده فعل؟",
+          "explanation": "پس از didn't و did هرگز شکل گذشته فعل می‌آید و فعل به شکل ساده برمی‌گردد.",
+          "examples": ["She didn't watch TV.", "Did they listen to the radio? -> Yes, they did."]
         },
         {
-          "word": "Connect",
-          "translation": "متصل شدن، ارتباط داشتن",
-          "synonyms": ["Link", "Join"],
-          "antonyms": ["Disconnect"],
-          "part_of_speech": "Verb",
-          "example": "Connect to the Wi-Fi."
+          "topic": "گذشته فعل be (was / were)",
+          "formula": "I / he / she / it -> was | you / we / they -> were",
+          "explanation": "منفی با wasn't و weren't. در گذشته فعل be از did استفاده نمی‌کنیم.",
+          "examples": ["Was she there?", "They were happy at home."]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Reading",
-          "lines": [
-            {
-              "english": "Media plays an important role in our life.",
-              "persian": "رسانه‌ها نقش مهمی در زندگی ما ایفا می‌کنند.",
-              "exam_tip": "اصطلاح play a role به معنی نقش داشتن."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "Did you watch the news last night?", "persian": "آیا دیشب اخبار را تماشا کردی؟" },
+        { "speaker": "B", "english": "No, I didn't. I listened to the radio.", "persian": "خیر. به رادیو گوش دادم." },
+        { "speaker": "A", "english": "Was the program interesting?", "persian": "آیا برنامه جالب بود؟" },
+        { "speaker": "B", "english": "Yes, it was. It was wonderful.", "persian": "بله، بود. فوق‌العاده بود." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "Past Simple Tense (Regular & Irregular Verbs)",
-          "explanation": "زمان گذشته ساده برای بیان کارهایی که در گذشته تمام شده‌اند.",
-          "formula": "Subject + Past Form of Verb (V2)",
-          "examples": [
-            {
-              "english": "I listened to the radio yesterday.",
-              "persian": "دیروز به رادیو گوش دادم."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "Yesterday, our class attended a school media event. We watched a short film, listened to a reporter and wrote a short report. The event was interesting.",
+        "text_persian": "دیروز کلاس ما در یک رویداد رسانه‌ای مدرسه شرکت کرد. ما فیلم کوتاهی تماشا کردیم، به یک گزارشگر گوش دادیم و گزارشی کوتاه نوشتیم. آن رویداد جالب بود."
+      }
     },
     {
       "lesson_number": 6,
-      "title": "Health and Medical Services",
+      "title": "Health and Injuries",
+      "persian_title": "سلامتی و آسیب‌دیدگی‌ها",
+      "objective": "صحبت درباره سلامتی، حوادث و آسیب‌های گذشته. دستور اصلی: گذشته ساده افعال بی‌قاعده و ضمایر مفعولی.",
       "vocabulary": [
+        { "word": "health", "translation": "سلامتی", "synonyms": ["wellness"], "antonyms": ["sickness", "illness"], "part_of_speech": "Noun", "example": "Health is important.", "example_persian": "سلامتی مهم است." },
+        { "word": "injury", "translation": "آسیب‌دیدگی", "synonyms": ["damage"], "antonyms": [], "part_of_speech": "Noun", "example": "The injury was not serious.", "example_persian": "آسیب‌دیدگی جدی نبود." },
+        { "word": "accident", "translation": "حادثه، تصادف", "synonyms": ["crash"], "antonyms": [], "part_of_speech": "Noun", "example": "He had an accident yesterday.", "example_persian": "او دیروز دچار حادثه شد." },
+        { "word": "hurt", "translation": "آسیب زدن، درد داشتن", "synonyms": ["injure"], "antonyms": ["heal"], "part_of_speech": "Verb", "example": "My arm hurts.", "example_persian": "دستم درد می‌کند." },
+        { "word": "bruise", "translation": "کبودی", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "He has a bruise on his arm.", "example_persian": "روی بازویش کبودی دارد." },
+        { "word": "plaster", "translation": "چسب زخم، گچ", "synonyms": ["bandage"], "antonyms": [], "part_of_speech": "Noun", "example": "She put a plaster on her finger.", "example_persian": "او روی انگشتش چسب زخم گذاشت." },
+        { "word": "break", "translation": "شکستن", "synonyms": [], "antonyms": ["fix"], "part_of_speech": "Verb", "example": "He broke his glasses.", "example_persian": "او عینکش را شکست." },
+        { "word": "fall", "translation": "افتادن", "synonyms": ["drop"], "antonyms": ["rise"], "part_of_speech": "Verb", "example": "Be careful not to fall.", "example_persian": "مراقب باش نیفتی." },
+        { "word": "fell", "translation": "افتاد (گذشته fall)", "synonyms": [], "antonyms": [], "part_of_speech": "Verb (Past)", "example": "She fell yesterday.", "example_persian": "او دیروز افتاد." },
+        { "word": "head", "translation": "سر", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "My head hurts.", "example_persian": "سرم درد می‌کند." },
+        { "word": "arm", "translation": "بازو، دست", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "He hurt his arm.", "example_persian": "او دستش را آسیب زد." },
+        { "word": "leg", "translation": "پا", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "My leg hurts.", "example_persian": "پایم درد می‌کند." },
+        { "word": "ankle", "translation": "مچ پا", "synonyms": [], "antonyms": [], "part_of_speech": "Noun", "example": "He hurt his ankle.", "example_persian": "مچ پایش آسیب دید." },
+        { "word": "hospital", "translation": "بیمارستان", "synonyms": ["clinic"], "antonyms": [], "part_of_speech": "Noun", "example": "They took him to the hospital.", "example_persian": "او را به بیمارستان بردند." },
+        { "word": "help", "translation": "کمک", "synonyms": ["assist"], "antonyms": [], "part_of_speech": "Noun / Verb", "example": "Do you need help?", "example_persian": "به کمک نیاز داری؟" }
+      ],
+      "grammar": [
         {
-          "word": "Patient",
-          "translation": "بیمار (اسم)، صبور (صفت)",
-          "synonyms": ["Sick person"],
-          "antonyms": ["Healthy person"],
-          "part_of_speech": "Noun / Adjective",
-          "example": "The doctor is visiting the patient."
+          "topic": "گذشته ساده افعال بی‌قاعده",
+          "formula": "شکل تغییریافته فعل در گذشته",
+          "explanation": "شکل گذشته افعال بی‌قاعده با ed ساخته نمی‌شود و باید حفظ شوند: break->broke, fall->fell, go->went, see->saw, have->had.",
+          "examples": ["I fell yesterday. (دیروز افتادم)", "He broke his glasses."]
         },
         {
-          "word": "Health",
-          "translation": "سلامتی، بهداشت",
-          "synonyms": ["Wellness", "Fitness"],
-          "antonyms": ["Sickness", "Illness"],
-          "part_of_speech": "Noun",
-          "example": "Health is better than wealth."
-        },
-        {
-          "word": "Medicine",
-          "translation": "دارو، پزشکی",
-          "synonyms": ["Drug", "Medication"],
-          "antonyms": [],
-          "part_of_speech": "Noun",
-          "example": "Take this medicine after lunch."
+          "topic": "ضمایر مفعولی (Object Pronouns)",
+          "formula": "me (مرا/به من), you (تو را), him (او را-مذکر), her (او را-مونث), it (آن را), us (ما را), them (آن‌ها را)",
+          "explanation": "ضمیر مفعولی بعد از فعل یا حرف اضافه می‌آید. مثال: The doctor helped him. Listen to me.",
+          "examples": ["The doctor helped him.", "Listen to me.", "He helped me. (He فاعل و me مفعول است)"]
         }
       ],
-      "reading_passages": [
-        {
-          "section_title": "Conversation",
-          "lines": [
-            {
-              "english": "What is wrong with you?",
-              "persian": "مشکل شما چیست؟ چه اتفاقی افتاده؟",
-              "exam_tip": "عبارت پرکاربرد امتحانی برای احوالپرسی از بیمار."
-            },
-            {
-              "english": "I have a sore throat.",
-              "persian": "من گلو درد دارم.",
-              "exam_tip": "استفاده از فعل have برای بیان بیماری‌ها."
-            }
-          ]
-        }
+      "conversation": [
+        { "speaker": "A", "english": "Did Mina have an accident?", "persian": "آیا مینا دچار حادثه شد؟" },
+        { "speaker": "B", "english": "Yes, she did. She fell yesterday.", "persian": "بله. او دیروز افتاد." },
+        { "speaker": "A", "english": "Did she hurt her leg?", "persian": "آیا به پایش آسیب زد؟" },
+        { "speaker": "B", "english": "No, she hurt her arm. Her family took her to the hospital.", "persian": "خیر، به دستش آسیب زد. خانواده‌اش او را به بیمارستان بردند." }
       ],
-      "grammar_and_exam_points": [
-        {
-          "topic": "Modal Verb: Should / Shouldn't",
-          "explanation": "استفاده از should برای توصیه و نصیحت کردن.",
-          "formula": "Subject + should/shouldn't + Base Verb",
-          "examples": [
-            {
-              "english": "You should rest at home.",
-              "persian": "تو باید در خانه استراحت کنی."
-            }
-          ]
-        }
-      ]
+      "reading": {
+        "text_english": "Ali fell while he was playing. He hurt his ankle, so his father took him to a clinic. The doctor examined him and gave him advice. Ali thanked the doctor.",
+        "text_persian": "علی هنگام بازی افتاد. مچ پایش آسیب دید، بنابراین پدرش او را به درمانگاه برد. پزشک او را معاینه کرد و به او توصیه‌هایی داد. علی از پزشک تشکر کرد."
+      }
     }
+  ],
+  "irregular_verbs": [
+    { "base": "go", "past": "went", "pp": "gone", "translation": "رفتن" },
+    { "base": "come", "past": "came", "pp": "come", "translation": "آمدن" },
+    { "base": "see", "past": "saw", "pp": "seen", "translation": "دیدن" },
+    { "base": "have", "past": "had", "pp": "had", "translation": "داشتن" },
+    { "base": "do", "past": "did", "pp": "done", "translation": "انجام دادن" },
+    { "base": "make", "past": "made", "pp": "made", "translation": "ساختن" },
+    { "base": "take", "past": "took", "pp": "taken", "translation": "برداشتن، گرفتن" },
+    { "base": "get", "past": "got", "pp": "got", "translation": "به دست آوردن" },
+    { "base": "give", "past": "gave", "pp": "given", "translation": "دادن" },
+    { "base": "write", "past": "wrote", "pp": "written", "translation": "نوشتن" },
+    { "base": "read", "past": "read", "pp": "read", "translation": "خواندن" },
+    { "base": "buy", "past": "bought", "pp": "bought", "translation": "خریدن" },
+    { "base": "bring", "past": "brought", "pp": "brought", "translation": "آوردن" },
+    { "base": "break", "past": "broke", "pp": "broken", "translation": "شکستن" },
+    { "base": "fall", "past": "fell", "pp": "fallen", "translation": "افتادن" },
+    { "base": "hurt", "past": "hurt", "pp": "hurt", "translation": "آسیب زدن" },
+    { "base": "find", "past": "found", "pp": "found", "translation": "پیدا کردن" },
+    { "base": "say", "past": "said", "pp": "said", "translation": "گفتن" },
+    { "base": "tell", "past": "told", "pp": "told", "translation": "گفتن، تعریف کردن" },
+    { "base": "meet", "past": "met", "pp": "met", "translation": "ملاقات کردن" },
+    { "base": "eat", "past": "ate", "pp": "eaten", "translation": "خوردن" },
+    { "base": "drink", "past": "drank", "pp": "drunk", "translation": "نوشیدن" },
+    { "base": "run", "past": "ran", "pp": "run", "translation": "دویدن" },
+    { "base": "speak", "past": "spoke", "pp": "spoken", "translation": "صحبت کردن" },
+    { "base": "think", "past": "thought", "pp": "thought", "translation": "فکر کردن" }
+  ],
+  "synonyms_and_antonyms": [
+    { "word1": "brave", "word2": "courageous", "type": "synonym", "meaning": "شجاع" },
+    { "word1": "brave", "word2": "afraid / cowardly", "type": "antonym", "meaning": "شجاع / ترسو" },
+    { "word1": "kind", "word2": "friendly", "type": "synonym", "meaning": "مهربان" },
+    { "word1": "kind", "word2": "unkind", "type": "antonym", "meaning": "مهربان / نامهربان" },
+    { "word1": "clever", "word2": "smart", "type": "synonym", "meaning": "باهوش" },
+    { "word1": "clever", "word2": "foolish", "type": "antonym", "meaning": "باهوش / نادان" },
+    { "word1": "polite", "word2": "mannerly", "type": "synonym", "meaning": "مؤدب" },
+    { "word1": "polite", "word2": "rude", "type": "antonym", "meaning": "مؤدب / بی‌ادب" },
+    { "word1": "careful", "word2": "cautious", "type": "synonym", "meaning": "بااحتیاط" },
+    { "word1": "careful", "word2": "careless", "type": "antonym", "meaning": "بااحتیاط / بی‌احتیاط" },
+    { "word1": "happy", "word2": "glad", "type": "synonym", "meaning": "خوشحال" },
+    { "word1": "happy", "word2": "sad", "type": "antonym", "meaning": "خوشحال / غمگین" },
+    { "word1": "early", "word2": "late", "type": "antonym", "meaning": "زود / دیر" },
+    { "word1": "open", "word2": "closed", "type": "antonym", "meaning": "باز / بسته" },
+    { "word1": "safe", "word2": "dangerous", "type": "antonym", "meaning": "امن / خطرناک" },
+    { "word1": "healthy", "word2": "sick / ill", "type": "antonym", "meaning": "سالم / بیمار" },
+    { "word1": "start / begin", "word2": "finish / end", "type": "antonym", "meaning": "شروع کردن / تمام کردن" }
+  ],
+  "golden_exam_tips": [
+    "بعد از does و doesn't فعل اصلی همیشه ساده می‌آید (Does she work? نه Does she works?).",
+    "بعد از did و didn't فعل به شکل ساده برمی‌گردد (Did he go? نه Did he went?).",
+    "در حال استمراری فعل کمکی be را حذف نکنید (She is reading).",
+    "برای صفت‌ها از be استفاده کنید (He is shy)، اما برای فعل اصلی در حال ساده از do/does کمک بگیرید.",
+    "در پرسش با be، فعل به ابتدای جمله می‌رود (Are they ready?).",
+    "در پرسش‌های WH، جایگاه کلمه پرسشی ابتدای جمله است (Where does he live?).",
+    "قیدهای تکرار معمولاً پیش از فعل اصلی و پس از فعل be قرار می‌گیرند.",
+    "ضمیر مفعولی پس از فعل می‌آید (I saw them، نه I saw they)."
+  ],
+  "exam_questions": [
+    { "id": 1, "section": "واژگان", "question": "(۱) معنی shy کدام است؟", "options": ["الف) شجاع", "ب) خجالتی", "ج) صبور"], "correct": 1, "explanation": "shy یعنی خجالتی." },
+    { "id": 2, "section": "واژگان", "question": "(۲) معنی receptionist چیست؟", "options": ["الف) پذیرشگر", "ب) مسافر", "ج) راننده"], "correct": 0, "explanation": "receptionist یعنی پذیرشگر." },
+    { "id": 3, "section": "واژگان", "question": "(۳) متضاد polite کدام است؟", "options": ["الف) kind", "ب) rude", "ج) helpful"], "correct": 1, "explanation": "متضاد polite (مؤدب) کلمه rude (بی‌ادب) است." },
+    { "id": 4, "section": "واژگان", "question": "(۴) معنی fireworks چیست؟", "options": ["الف) هدیه", "ب) آتش بازی", "ج) روزنامه"], "correct": 1, "explanation": "fireworks یعنی آتش‌بازی." },
+    { "id": 5, "section": "واژگان", "question": "(۵) جای خالی را کامل کنید: The post office is a public ...", "options": ["الف) service", "b) injury", "c) accident"], "correct": 0, "explanation": "service می‌آید؛ یعنی اداره پست یک خدمت عمومی است." },
+    { "id": 6, "section": "واژگان", "question": "(۶) معنی online چیست؟", "options": ["الف) آفلاین", "ب) برخط", "ج) سنتی"], "correct": 1, "explanation": "online یعنی آنلاین یا برخط." },
+    { "id": 7, "section": "واژگان", "question": "(۷) معنی accident چیست؟", "options": ["الف) حادثه", "ب) جشن", "ج) سفر"], "correct": 0, "explanation": "accident یعنی حادثه یا تصادف." },
+    { "id": 8, "section": "واژگان", "question": "(۸) متضاد sick کدام است؟", "options": ["الف) healthy", "ب) clever", "ج) careful"], "correct": 0, "explanation": "sick یعنی بیمار و متضاد آن healthy (سالم) است." },
+    { "id": 9, "section": "دستور زبان", "question": "(۹) My friends ... very kind.", "options": ["الف) am", "ب) is", "ج) are"], "correct": 2, "explanation": "چون friends جمع است، are می‌آید." },
+    { "id": 10, "section": "دستور زبان", "question": "(۱۰) منفی جمله She is lazy کدام است؟", "options": ["الف) She is not lazy.", "ب) She don't lazy.", "ج) She not lazy."], "correct": 0, "explanation": "برای منفی کردن is از isn't یا is not استفاده می‌کنیم." },
+    { "id": 11, "section": "دستور زبان", "question": "(۱۱) مرتب شده سؤالی جمله (you / watching / TV / are) چیست؟", "options": ["الف) Are you watching TV?", "ب) You are watching TV?", "ج) Watching you are TV?"], "correct": 0, "explanation": "فعل be به ابتدای سؤال می‌رود." },
+    { "id": 12, "section": "دستور زبان", "question": "(۱۲) گزینه درست: Does he (travel / travels) every summer?", "options": ["الف) travel", "ب) travels"], "correct": 0, "explanation": "بعد از does فعل به صورت ساده می‌آید." },
+    { "id": 13, "section": "دستور زبان", "question": "(۱۳) منفی جمله They visit their grandparents کدام است؟", "options": ["الف) They don't visit their grandparents.", "ب) They doesn't visit their grandparents.", "ج) They not visit their grandparents."], "correct": 0, "explanation": "با فاعل they منفی با don't ساخته می‌شود." },
+    { "id": 14, "section": "دستور زبان", "question": "(۱۴) What time ... the bank open?", "options": ["الف) do", "ب) does"], "correct": 1, "explanation": "چون فاعل the bank مفرد است، does می‌آید." },
+    { "id": 15, "section": "دستور زبان", "question": "(۱۵) شکل گذشته فعل watch در جمله We (watch) a film last night چیست؟", "options": ["الف) watched", "ب) watches", "ج) watching"], "correct": 0, "explanation": "شکل گذشته باقاعده با افزودن ed ساخته می‌شود." },
+    { "id": 16, "section": "دستور زبان", "question": "(۱۶) گزینه درست: Did Sara (go / went) to school yesterday?", "options": ["الف) go", "ب) went"], "correct": 0, "explanation": "بعد از did فعل به شکل ساده برمی‌گردد." },
+    { "id": 17, "section": "دستور زبان", "question": "(۱۷) I ... at home yesterday.", "options": ["الف) was", "ب) were"], "correct": 0, "explanation": "فاعل I با was می‌آید." },
+    { "id": 18, "section": "دستور زبان", "question": "(۱۸) ضمیر مفعولی مناسب: The teacher helped Reza. -> The teacher helped ...", "options": ["الف) he", "ب) him"], "correct": 1, "explanation": "بعد از فعل helped ضمیر مفعولی him لازم است." },
+    { "id": 19, "section": "دستور زبان", "question": "(۱۹) شکل ing‌دار فعل write چیست؟", "options": ["الف) writing", "ب) writeing", "ج) writting"], "correct": 0, "explanation": "حرف e پایانی حذف و ing اضافه می‌شود." },
+    { "id": 20, "section": "دستور زبان", "question": "(۲۰) شکل پرسشی جمله They were happy چیست؟", "options": ["الف) Were they happy?", "ب) Did they happy?", "ج) Are they happy?"], "correct": 0, "explanation": "در سؤال were پیش از فاعل می‌آید." },
+    { "id": 21, "section": "ترجمه", "question": "(۲۱) ترجمه What is your friend like؟", "options": ["الف) شخصیت دوستت چگونه است؟", "ب) دوستت چه چیزی را دوست دارد؟"], "correct": 0, "explanation": "پرسش درباره ویژگی اخلاقی است." },
+    { "id": 22, "section": "ترجمه", "question": "(۲۲) ترجمه I'm filling out a form.", "options": ["الف) من دارم یک فرم را پر می‌کنم.", "ب) من فرم را پر کردم."], "correct": 0, "explanation": "حال استمراری است." },
+    { "id": 23, "section": "ترجمه", "question": "(۲۳) ترجمه Does your family celebrate Nowruz؟", "options": ["الف) آیا خانواده تو نوروز را جشن می‌گیرد؟", "ب) خانواده تو نوروز را جشن گرفت."], "correct": 0, "explanation": "جمله پرسشی حال ساده است." },
+    { "id": 24, "section": "ترجمه", "question": "(۲۴) ترجمه The shop usually closes at nine.", "options": ["الف) مغازه معمولاً ساعت ۹ بسته می‌شود.", "ب) مغازه همیشه ساعت ۹ باز می‌شود."], "correct": 0, "explanation": "معنی قید تکرار و فعل close." },
+    { "id": 25, "section": "ترجمه", "question": "(۲۵) ترجمه We listened to the radio yesterday.", "options": ["الف) ما دیروز به رادیو گوش دادیم.", "ب) ما دیروز رادیو خریدیم."], "correct": 0, "explanation": "گذشته ساده فعل listen." },
+    { "id": 26, "section": "ترجمه", "question": "(۲۶) ترجمه He hurt his ankle.", "options": ["الف) او به مچ پایش آسیب زد.", "ب) او به دستش آسیب زد."], "correct": 0, "explanation": "ankle یعنی مچ پا." },
+    { "id": 27, "section": "ترجمه", "question": "(۲۷) به انگلیسی: «من دیروز در خانه بودم.»", "options": ["الف) I was at home yesterday.", "ب) I am at home yesterday."], "correct": 0, "explanation": "استفاده از گذشته was." },
+    { "id": 28, "section": "ترجمه", "question": "(۲۸) به انگلیسی: «آیا آن‌ها دیشب فیلم تماشا کردند؟»", "options": ["الف) Did they watch a movie last night?", "ب) Were they watch a movie last night?"], "correct": 0, "explanation": "پرسشی گذشته با Did." }
   ]
 }
